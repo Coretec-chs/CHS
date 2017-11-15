@@ -1,0 +1,184 @@
+﻿@model EmployeeViewModel
+@{
+    ViewBag.Title = "My Profile";
+}
+
+<div class="panel-group panel-group-continuous" id="mainacc"
+     aria-multiselectable="true" role="tablist">
+    <div class="panel panel-default">
+        <div class="panel-heading" id="heading1" @*role="tab"*@>
+            <a class="panel-title " data-parent="#mainacc" @*data-toggle="collapse"*@
+               @*href="#ctab1" aria-controls="ctab1"*@
+               @*aria-expanded="true"*@>
+                @*<h5 class="white"> General Information </h5>*@
+                <h5> General Information </h5>
+            </a>
+        </div>
+        @*<div class="panel-collapse collapse in" id="ctab1" aria-labelledby="heading1"*@
+             <div class="panel" id="ctab1" aria-labelledby="heading1"
+             role="tabpanel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="" href="javascript:void(0)">
+                            <img style='height: 200px; width: 250px;' src='/Content/global/assets/images/noimage.png' alt=""
+                                 onerror="this.onerror = null; this.src = '/Content/global/assets/images/noimage.png';">
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.No, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Last_Name, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Middle_Name, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Title, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.First_Name, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Status, new { @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="heading2" role="tab">
+            <a class="panel-title collapsed" data-parent="#mainacc" data-toggle="collapse"
+               href="#ctab6" aria-controls="ctab6"
+               aria-expanded="false">
+                <h5>Personal Details</h5>
+            </a>
+        </div>
+        <div class="panel-collapse collapse" id="ctab6" aria-labelledby="heading2"
+             role="tabpanel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Gender, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Marital_Status, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.ID_Number, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Driving_Licence, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Responsibility_Center, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Nationality, new { @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="heading2" role="tab">
+            <a class="panel-title collapsed" data-parent="#mainacc" data-toggle="collapse"
+               href="#ctab2" aria-controls="ctab2"
+               aria-expanded="false">
+                <h5>Important Dates</h5>
+            </a>
+        </div>
+        <div class="panel-collapse collapse" id="ctab2" aria-labelledby="heading2"
+             role="tabpanel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Date_Of_Birth, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.DAge, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Date_Of_Join, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.DService, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Contract_Start_Date, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Contract_End_Date, new { @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="heading3" role="tab">
+            <a class="panel-title collapsed" data-parent="#mainacc" data-toggle="collapse"
+               href="#ctab3" aria-controls="ctab3"
+               aria-expanded="false">
+                <h5> Contact Information </h5>
+            </a>
+        </div>
+        <div class="panel-collapse collapse" id="ctab3" aria-labelledby="heading3"
+             role="tabpanel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Home_Phone_Number, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Cellular_Phone_Number, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Work_Phone_Number, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Postal_Address, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Post_Code, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.City, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(m => m.Physical_Residential_Address, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.E_Mail, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Company_E_Mail, new { @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="heading4" role="tab">
+            <a class="panel-title collapsed" data-parent="#mainacc" data-toggle="collapse"
+               href="#ctab4" aria-controls="ctab4"
+               aria-expanded="false">
+                <h5> Job Information </h5>
+            </a>
+        </div>
+        <div class="panel-collapse collapse" id="ctab4" aria-labelledby="heading4"
+             role="tabpanel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        @Html.EditorFor(m => m.Job_Title, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Acting_Position, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Employment_Type, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-6">
+                        @Html.EditorFor(m => m.Dimension_1_Description, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Dimension_2_Description, new { @readonly = "readonly" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" id="heading5" role="tab">
+            <a class="panel-title collapsed" data-parent="#mainacc" data-toggle="collapse"
+               href="#ctab5" aria-controls="ctab5"
+               aria-expanded="false">
+                <h5> Payment Information </h5>
+            </a>
+        </div>
+        <div class="panel-collapse collapse" id="ctab5" aria-labelledby="heading5"
+             role="tabpanel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        @Html.EditorFor(m => m.NHIF_No, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.NSSF_No, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.PAYE_Number, new { @readonly = "readonly" })
+                    </div>
+                    <div class="col-md-6">
+                        @Html.EditorFor(m => m.BankName, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.BranchName, new { @readonly = "readonly" })
+                        @Html.EditorFor(m => m.Bank_Account_Number, new { @readonly = "readonly" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

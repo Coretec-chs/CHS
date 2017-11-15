@@ -1,0 +1,49 @@
+﻿@using WebUI.Utility;
+@using Share.Bonnet.AjaxDropDownList;
+@model object
+
+@{
+
+    var htmlAttributes = new RouteValueDictionary();      
+
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "form-control " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "btn-group bootstrap-select");
+    }
+
+    if (ViewBag.@onchange != null)
+    {
+        htmlAttributes.Add("onchange", ViewBag.@onchange);
+    }
+
+    if (ViewBag.@onclick != null)
+    {
+        htmlAttributes.Add("onclick", ViewBag.@onclick);
+    }
+    htmlAttributes.Add("data-plugin", "select2");
+    string targetName =  ViewBag.targetname.ToString();
+    string listUrl = ViewBag.listurl.ToString(); 
+}
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="control">
+        @Html.DropDownListFor(m => m,
+            new SelectList(ViewBag.selectList, "Value", "Text", Model)
+            , "Select...", htmlAttributes,
+                      Ajax.UpdateActionFor(
+                         targetName,
+                         new AjaxUpdateOptions
+                         {
+                             DisableTargetWhenEmpty = true,
+                             Url = listUrl                             
+                         }
+                         
+                     ))
+        @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+    </div>
+
+</div>

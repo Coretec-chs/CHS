@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/PortalWebService" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/PortalWebService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/PortalWebService" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="HRLeaveAppInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="names" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="leaveType" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="daysApplied" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="returnDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="applicationDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="endDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="domain_UserID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="applicantComments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="reliever" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="request_Leave_Allowance" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="applicant_Supervisor" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="relieverName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppInsert_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTransportAppInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="daysApplied" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="returnDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="applicationDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="fromDestination" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="toDestination" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purposeOfTrip" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pickupPoint" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="names" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="returnFrom" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="returnTo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accompanyingEmployees" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pickupTime" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTransportAppInsert_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTrainingAppMofify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="courseCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="location" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="empResponsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOfParticipant" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="purposeOfTraining" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fromDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="toDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="duration" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="durationUnits" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="provider" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="providerName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="applicationDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="tableID" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="employeeName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="durationFormula" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="trainingDescription" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="totalCost" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="recommendedTraining" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="justification" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="termsConditionsAgreed" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTrainingAppMofify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTrainingLinesParticipantsInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="trainingDocApplicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="suggested" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTrainingLinesParticipantsInsert_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SumbitTrainingForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="docType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SumbitTrainingForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="HRTransportRequisitionInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="daysApplied_HTR" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate_HTR" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="returnDate_HTR" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="status_HTR" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="userID_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="applicantComments_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purposeOfTrip_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="transportType_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="timeOfTrip_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pickupPoint_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fromDestination_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="toDestination_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOfStaffTravelling_HTR" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="departmentCode_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeName_HTR" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="stationCode_HTR" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTransportRequisitionInsert_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendLeaveForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendLeaveForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SubmitTransportRequestForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SubmitTransportRequestForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="HRAppraisalHeaderInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Type" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisalStage" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisalMethod" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="supervisorNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="evaluation_Period_Start" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="evaluation_Period_End" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRAppraisalHeaderInsert_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRAppraisalInsertLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="categorize_As" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="self_Rating" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="sub_Category" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="unit_of_Measure" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRAppraisalInsertLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Store_SendApprovalRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Store_SendApprovalRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Appraisal_SendApprovalRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Appraisal_SendApprovalRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="LeaveReimbursment_SendApprovalRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="LeaveReimbursment_SendApprovalRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quarter" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="target" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="objective" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="weightage" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="kPI" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="kRA" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emp_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emp_Ratings" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KPI">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="self_Rating" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="performanceIndicatorCode" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KPI_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KPI_Modify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="self_Rating" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="performanceIndicatorCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_Series" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KPI_Modify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KPI_Modify_Sup">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="self_Rating" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="no_Series" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KPI_Modify_Sup_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_CD">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_CD_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_CD_Modify_Sup">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_Series" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="ratings" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_CD_Modify_Sup_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_CD_Modify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_Series" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_CD_Modify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KRA">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="goal" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="measures" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_KRA_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_PT">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="target" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_PT_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertPurchaseHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="orderDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="donorCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="programCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="activity" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purpose" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertPurchaseHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PurchaseRequisitionLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="type" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="description_2" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quantity_Requested" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_5_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_2_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_1_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requistion_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_3_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_4_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="unit_of_measure" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="gen_Prod_Posting_Group" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PurchaseRequisitionLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTimesheetLinesModify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lOE" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="month" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="year" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="entry_No" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTimesheetLinesModify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTimesheetLinesApprovalStatus">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entry_No" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTimesheetLinesApprovalStatus_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendEmployeeRequisitionForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sender_Id" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendEmployeeRequisitionForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="HRTimesheetLinesDelete">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entry_No" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRTimesheetLinesDelete_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_Modify_Sup">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_Series" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="sup_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="sup_Rating" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_Modify_Sup_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_Modify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisal_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appraisal_Period" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="employee_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quarter" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="target" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="objective" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="weightage" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="kPI" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="kRA" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_Series" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="emp_Comments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emp_Rating" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HR_Objectives_Setting_Modify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestSurrenderHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="imprestIssueDocNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="donorCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="programCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="activity" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cashier" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="county" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accountNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accountName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestSurrenderHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="beginDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="donorCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="programCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="activity" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purpose" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cashier" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="county" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accountNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accountName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="req_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="advance_Type" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="destination_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_of_Days" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="begin_Date" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestSurrenderLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="req_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="actual_Spent" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="InsertImprestSurrenderLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HrHREmployeeRequisitionsInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="requiredPositions" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="requestor" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="jobID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="reasonForRequest" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="employmentType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="priority" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="closingDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="recruitmentType" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="requisitionType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HrHREmployeeRequisitionsInsert_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendApprovalRequestFromPortal">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="tableID" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="senderID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendApprovalRequestFromPortal_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Timesheet_SendApprovalRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Timesheet_SendApprovalRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="StoreRequisitionLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="type" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="description_2" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quantity_Requested" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="issuing_Store" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_2_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="shortcut_Dimension_1_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="requistion_No" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="StoreRequisitionLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PurchReq_SendApprovalRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PurchReq_SendApprovalRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendLeaveForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendLeaveForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendLeaveReimbursmentForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendLeaveReimbursmentForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendEmpReqForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendEmpReqForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendTransReqForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendTransReqForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendStoreReqForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendStoreReqForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendTravelReqForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendTravelReqForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendPurchaseReqForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendPurchaseReqForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Approver_SendTimesheetForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendTimesheetForApproval_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendPerfForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="submitAction" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comments" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approver_SendPerfForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="UpdateApprovalEntries">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entryNO" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="docNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateApprovalEntries_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Travel_SendApprovalRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Travel_SendApprovalRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="UploadRecords">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="recordlinkurl" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="recordID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="desc" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="company_name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="user_id" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadRecords_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadSurrenderRecords">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="recordlinkurl" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="recordID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="desc" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="company_name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="user_id" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadSurrenderRecords_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadJobApplicationRecords">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="recordlinkurl" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="recordID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="desc" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="company_name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="user_id" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadJobApplicationRecords_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendAppraisalToSupervisor">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisalNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendAppraisalToSupervisor_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnAppraisalToSupervisor">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisalNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnAppraisalToSupervisor_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnAppraisalToAppraisee">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisalNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnAppraisalToAppraisee_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approve_Appraisal">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appraisalNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Approve_Appraisal_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ModifyImprestHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="beginDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="donorCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="projectCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="programCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="activity" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purpose" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cashier" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="county" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accountNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accountName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="reqNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ModifyImprestHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ModifyImprestLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="req_No" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="advance_Type" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="destination_Code" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="no_of_Days" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="begin_Date" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ModifyImprestLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteImprestHeader">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="reqNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteImprestHeader_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteImprestLines">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteImprestLines_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="HRLeaveAppInsert">
+    <part name="parameters" element="tns:HRLeaveAppInsert" />
+  </message>
+  <message name="HRLeaveAppInsert_Result">
+    <part name="parameters" element="tns:HRLeaveAppInsert_Result" />
+  </message>
+  <message name="HRTransportAppInsert">
+    <part name="parameters" element="tns:HRTransportAppInsert" />
+  </message>
+  <message name="HRTransportAppInsert_Result">
+    <part name="parameters" element="tns:HRTransportAppInsert_Result" />
+  </message>
+  <message name="HRTrainingAppMofify">
+    <part name="parameters" element="tns:HRTrainingAppMofify" />
+  </message>
+  <message name="HRTrainingAppMofify_Result">
+    <part name="parameters" element="tns:HRTrainingAppMofify_Result" />
+  </message>
+  <message name="HRTrainingLinesParticipantsInsert">
+    <part name="parameters" element="tns:HRTrainingLinesParticipantsInsert" />
+  </message>
+  <message name="HRTrainingLinesParticipantsInsert_Result">
+    <part name="parameters" element="tns:HRTrainingLinesParticipantsInsert_Result" />
+  </message>
+  <message name="SumbitTrainingForApproval">
+    <part name="parameters" element="tns:SumbitTrainingForApproval" />
+  </message>
+  <message name="SumbitTrainingForApproval_Result">
+    <part name="parameters" element="tns:SumbitTrainingForApproval_Result" />
+  </message>
+  <message name="HRTransportRequisitionInsert">
+    <part name="parameters" element="tns:HRTransportRequisitionInsert" />
+  </message>
+  <message name="HRTransportRequisitionInsert_Result">
+    <part name="parameters" element="tns:HRTransportRequisitionInsert_Result" />
+  </message>
+  <message name="SendLeaveForApproval">
+    <part name="parameters" element="tns:SendLeaveForApproval" />
+  </message>
+  <message name="SendLeaveForApproval_Result">
+    <part name="parameters" element="tns:SendLeaveForApproval_Result" />
+  </message>
+  <message name="SubmitTransportRequestForApproval">
+    <part name="parameters" element="tns:SubmitTransportRequestForApproval" />
+  </message>
+  <message name="SubmitTransportRequestForApproval_Result">
+    <part name="parameters" element="tns:SubmitTransportRequestForApproval_Result" />
+  </message>
+  <message name="HRAppraisalHeaderInsert">
+    <part name="parameters" element="tns:HRAppraisalHeaderInsert" />
+  </message>
+  <message name="HRAppraisalHeaderInsert_Result">
+    <part name="parameters" element="tns:HRAppraisalHeaderInsert_Result" />
+  </message>
+  <message name="HRAppraisalInsertLines">
+    <part name="parameters" element="tns:HRAppraisalInsertLines" />
+  </message>
+  <message name="HRAppraisalInsertLines_Result">
+    <part name="parameters" element="tns:HRAppraisalInsertLines_Result" />
+  </message>
+  <message name="Store_SendApprovalRequest">
+    <part name="parameters" element="tns:Store_SendApprovalRequest" />
+  </message>
+  <message name="Store_SendApprovalRequest_Result">
+    <part name="parameters" element="tns:Store_SendApprovalRequest_Result" />
+  </message>
+  <message name="Appraisal_SendApprovalRequest">
+    <part name="parameters" element="tns:Appraisal_SendApprovalRequest" />
+  </message>
+  <message name="Appraisal_SendApprovalRequest_Result">
+    <part name="parameters" element="tns:Appraisal_SendApprovalRequest_Result" />
+  </message>
+  <message name="LeaveReimbursment_SendApprovalRequest">
+    <part name="parameters" element="tns:LeaveReimbursment_SendApprovalRequest" />
+  </message>
+  <message name="LeaveReimbursment_SendApprovalRequest_Result">
+    <part name="parameters" element="tns:LeaveReimbursment_SendApprovalRequest_Result" />
+  </message>
+  <message name="HR_Objectives_Setting">
+    <part name="parameters" element="tns:HR_Objectives_Setting" />
+  </message>
+  <message name="HR_Objectives_Setting_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_KPI">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KPI" />
+  </message>
+  <message name="HR_Objectives_Setting_KPI_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KPI_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_KPI_Modify">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KPI_Modify" />
+  </message>
+  <message name="HR_Objectives_Setting_KPI_Modify_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KPI_Modify_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_KPI_Modify_Sup">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KPI_Modify_Sup" />
+  </message>
+  <message name="HR_Objectives_Setting_KPI_Modify_Sup_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KPI_Modify_Sup_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_CD">
+    <part name="parameters" element="tns:HR_Objectives_Setting_CD" />
+  </message>
+  <message name="HR_Objectives_Setting_CD_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_CD_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_CD_Modify_Sup">
+    <part name="parameters" element="tns:HR_Objectives_Setting_CD_Modify_Sup" />
+  </message>
+  <message name="HR_Objectives_Setting_CD_Modify_Sup_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_CD_Modify_Sup_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_CD_Modify">
+    <part name="parameters" element="tns:HR_Objectives_Setting_CD_Modify" />
+  </message>
+  <message name="HR_Objectives_Setting_CD_Modify_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_CD_Modify_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_KRA">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KRA" />
+  </message>
+  <message name="HR_Objectives_Setting_KRA_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_KRA_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_PT">
+    <part name="parameters" element="tns:HR_Objectives_Setting_PT" />
+  </message>
+  <message name="HR_Objectives_Setting_PT_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_PT_Result" />
+  </message>
+  <message name="InsertPurchaseHeader">
+    <part name="parameters" element="tns:InsertPurchaseHeader" />
+  </message>
+  <message name="InsertPurchaseHeader_Result">
+    <part name="parameters" element="tns:InsertPurchaseHeader_Result" />
+  </message>
+  <message name="PurchaseRequisitionLines">
+    <part name="parameters" element="tns:PurchaseRequisitionLines" />
+  </message>
+  <message name="PurchaseRequisitionLines_Result">
+    <part name="parameters" element="tns:PurchaseRequisitionLines_Result" />
+  </message>
+  <message name="HRTimesheetLinesModify">
+    <part name="parameters" element="tns:HRTimesheetLinesModify" />
+  </message>
+  <message name="HRTimesheetLinesModify_Result">
+    <part name="parameters" element="tns:HRTimesheetLinesModify_Result" />
+  </message>
+  <message name="HRTimesheetLinesApprovalStatus">
+    <part name="parameters" element="tns:HRTimesheetLinesApprovalStatus" />
+  </message>
+  <message name="HRTimesheetLinesApprovalStatus_Result">
+    <part name="parameters" element="tns:HRTimesheetLinesApprovalStatus_Result" />
+  </message>
+  <message name="SendEmployeeRequisitionForApproval">
+    <part name="parameters" element="tns:SendEmployeeRequisitionForApproval" />
+  </message>
+  <message name="SendEmployeeRequisitionForApproval_Result">
+    <part name="parameters" element="tns:SendEmployeeRequisitionForApproval_Result" />
+  </message>
+  <message name="HRTimesheetLinesDelete">
+    <part name="parameters" element="tns:HRTimesheetLinesDelete" />
+  </message>
+  <message name="HRTimesheetLinesDelete_Result">
+    <part name="parameters" element="tns:HRTimesheetLinesDelete_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_Modify_Sup">
+    <part name="parameters" element="tns:HR_Objectives_Setting_Modify_Sup" />
+  </message>
+  <message name="HR_Objectives_Setting_Modify_Sup_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_Modify_Sup_Result" />
+  </message>
+  <message name="HR_Objectives_Setting_Modify">
+    <part name="parameters" element="tns:HR_Objectives_Setting_Modify" />
+  </message>
+  <message name="HR_Objectives_Setting_Modify_Result">
+    <part name="parameters" element="tns:HR_Objectives_Setting_Modify_Result" />
+  </message>
+  <message name="InsertImprestSurrenderHeader">
+    <part name="parameters" element="tns:InsertImprestSurrenderHeader" />
+  </message>
+  <message name="InsertImprestSurrenderHeader_Result">
+    <part name="parameters" element="tns:InsertImprestSurrenderHeader_Result" />
+  </message>
+  <message name="InsertImprestHeader">
+    <part name="parameters" element="tns:InsertImprestHeader" />
+  </message>
+  <message name="InsertImprestHeader_Result">
+    <part name="parameters" element="tns:InsertImprestHeader_Result" />
+  </message>
+  <message name="InsertImprestLines">
+    <part name="parameters" element="tns:InsertImprestLines" />
+  </message>
+  <message name="InsertImprestLines_Result">
+    <part name="parameters" element="tns:InsertImprestLines_Result" />
+  </message>
+  <message name="InsertImprestSurrenderLines">
+    <part name="parameters" element="tns:InsertImprestSurrenderLines" />
+  </message>
+  <message name="InsertImprestSurrenderLines_Result">
+    <part name="parameters" element="tns:InsertImprestSurrenderLines_Result" />
+  </message>
+  <message name="HrHREmployeeRequisitionsInsert">
+    <part name="parameters" element="tns:HrHREmployeeRequisitionsInsert" />
+  </message>
+  <message name="HrHREmployeeRequisitionsInsert_Result">
+    <part name="parameters" element="tns:HrHREmployeeRequisitionsInsert_Result" />
+  </message>
+  <message name="SendApprovalRequestFromPortal">
+    <part name="parameters" element="tns:SendApprovalRequestFromPortal" />
+  </message>
+  <message name="SendApprovalRequestFromPortal_Result">
+    <part name="parameters" element="tns:SendApprovalRequestFromPortal_Result" />
+  </message>
+  <message name="Timesheet_SendApprovalRequest">
+    <part name="parameters" element="tns:Timesheet_SendApprovalRequest" />
+  </message>
+  <message name="Timesheet_SendApprovalRequest_Result">
+    <part name="parameters" element="tns:Timesheet_SendApprovalRequest_Result" />
+  </message>
+  <message name="StoreRequisitionLines">
+    <part name="parameters" element="tns:StoreRequisitionLines" />
+  </message>
+  <message name="StoreRequisitionLines_Result">
+    <part name="parameters" element="tns:StoreRequisitionLines_Result" />
+  </message>
+  <message name="PurchReq_SendApprovalRequest">
+    <part name="parameters" element="tns:PurchReq_SendApprovalRequest" />
+  </message>
+  <message name="PurchReq_SendApprovalRequest_Result">
+    <part name="parameters" element="tns:PurchReq_SendApprovalRequest_Result" />
+  </message>
+  <message name="Approver_SendLeaveForApproval">
+    <part name="parameters" element="tns:Approver_SendLeaveForApproval" />
+  </message>
+  <message name="Approver_SendLeaveForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendLeaveForApproval_Result" />
+  </message>
+  <message name="Approver_SendLeaveReimbursmentForApproval">
+    <part name="parameters" element="tns:Approver_SendLeaveReimbursmentForApproval" />
+  </message>
+  <message name="Approver_SendLeaveReimbursmentForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendLeaveReimbursmentForApproval_Result" />
+  </message>
+  <message name="Approver_SendEmpReqForApproval">
+    <part name="parameters" element="tns:Approver_SendEmpReqForApproval" />
+  </message>
+  <message name="Approver_SendEmpReqForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendEmpReqForApproval_Result" />
+  </message>
+  <message name="Approver_SendTransReqForApproval">
+    <part name="parameters" element="tns:Approver_SendTransReqForApproval" />
+  </message>
+  <message name="Approver_SendTransReqForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendTransReqForApproval_Result" />
+  </message>
+  <message name="Approver_SendStoreReqForApproval">
+    <part name="parameters" element="tns:Approver_SendStoreReqForApproval" />
+  </message>
+  <message name="Approver_SendStoreReqForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendStoreReqForApproval_Result" />
+  </message>
+  <message name="Approver_SendTravelReqForApproval">
+    <part name="parameters" element="tns:Approver_SendTravelReqForApproval" />
+  </message>
+  <message name="Approver_SendTravelReqForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendTravelReqForApproval_Result" />
+  </message>
+  <message name="Approver_SendPurchaseReqForApproval">
+    <part name="parameters" element="tns:Approver_SendPurchaseReqForApproval" />
+  </message>
+  <message name="Approver_SendPurchaseReqForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendPurchaseReqForApproval_Result" />
+  </message>
+  <message name="Approver_SendTimesheetForApproval">
+    <part name="parameters" element="tns:Approver_SendTimesheetForApproval" />
+  </message>
+  <message name="Approver_SendTimesheetForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendTimesheetForApproval_Result" />
+  </message>
+  <message name="Approver_SendPerfForApproval">
+    <part name="parameters" element="tns:Approver_SendPerfForApproval" />
+  </message>
+  <message name="Approver_SendPerfForApproval_Result">
+    <part name="parameters" element="tns:Approver_SendPerfForApproval_Result" />
+  </message>
+  <message name="UpdateApprovalEntries">
+    <part name="parameters" element="tns:UpdateApprovalEntries" />
+  </message>
+  <message name="UpdateApprovalEntries_Result">
+    <part name="parameters" element="tns:UpdateApprovalEntries_Result" />
+  </message>
+  <message name="Travel_SendApprovalRequest">
+    <part name="parameters" element="tns:Travel_SendApprovalRequest" />
+  </message>
+  <message name="Travel_SendApprovalRequest_Result">
+    <part name="parameters" element="tns:Travel_SendApprovalRequest_Result" />
+  </message>
+  <message name="UploadRecords">
+    <part name="parameters" element="tns:UploadRecords" />
+  </message>
+  <message name="UploadRecords_Result">
+    <part name="parameters" element="tns:UploadRecords_Result" />
+  </message>
+  <message name="UploadSurrenderRecords">
+    <part name="parameters" element="tns:UploadSurrenderRecords" />
+  </message>
+  <message name="UploadSurrenderRecords_Result">
+    <part name="parameters" element="tns:UploadSurrenderRecords_Result" />
+  </message>
+  <message name="UploadJobApplicationRecords">
+    <part name="parameters" element="tns:UploadJobApplicationRecords" />
+  </message>
+  <message name="UploadJobApplicationRecords_Result">
+    <part name="parameters" element="tns:UploadJobApplicationRecords_Result" />
+  </message>
+  <message name="SendAppraisalToSupervisor">
+    <part name="parameters" element="tns:SendAppraisalToSupervisor" />
+  </message>
+  <message name="SendAppraisalToSupervisor_Result">
+    <part name="parameters" element="tns:SendAppraisalToSupervisor_Result" />
+  </message>
+  <message name="ReturnAppraisalToSupervisor">
+    <part name="parameters" element="tns:ReturnAppraisalToSupervisor" />
+  </message>
+  <message name="ReturnAppraisalToSupervisor_Result">
+    <part name="parameters" element="tns:ReturnAppraisalToSupervisor_Result" />
+  </message>
+  <message name="ReturnAppraisalToAppraisee">
+    <part name="parameters" element="tns:ReturnAppraisalToAppraisee" />
+  </message>
+  <message name="ReturnAppraisalToAppraisee_Result">
+    <part name="parameters" element="tns:ReturnAppraisalToAppraisee_Result" />
+  </message>
+  <message name="Approve_Appraisal">
+    <part name="parameters" element="tns:Approve_Appraisal" />
+  </message>
+  <message name="Approve_Appraisal_Result">
+    <part name="parameters" element="tns:Approve_Appraisal_Result" />
+  </message>
+  <message name="ModifyImprestHeader">
+    <part name="parameters" element="tns:ModifyImprestHeader" />
+  </message>
+  <message name="ModifyImprestHeader_Result">
+    <part name="parameters" element="tns:ModifyImprestHeader_Result" />
+  </message>
+  <message name="ModifyImprestLines">
+    <part name="parameters" element="tns:ModifyImprestLines" />
+  </message>
+  <message name="ModifyImprestLines_Result">
+    <part name="parameters" element="tns:ModifyImprestLines_Result" />
+  </message>
+  <message name="DeleteImprestHeader">
+    <part name="parameters" element="tns:DeleteImprestHeader" />
+  </message>
+  <message name="DeleteImprestHeader_Result">
+    <part name="parameters" element="tns:DeleteImprestHeader_Result" />
+  </message>
+  <message name="DeleteImprestLines">
+    <part name="parameters" element="tns:DeleteImprestLines" />
+  </message>
+  <message name="DeleteImprestLines_Result">
+    <part name="parameters" element="tns:DeleteImprestLines_Result" />
+  </message>
+  <portType name="PortalWebService_Port">
+    <operation name="HRLeaveAppInsert">
+      <input name="HRLeaveAppInsert" message="tns:HRLeaveAppInsert" />
+      <output name="HRLeaveAppInsert_Result" message="tns:HRLeaveAppInsert_Result" />
+    </operation>
+    <operation name="HRTransportAppInsert">
+      <input name="HRTransportAppInsert" message="tns:HRTransportAppInsert" />
+      <output name="HRTransportAppInsert_Result" message="tns:HRTransportAppInsert_Result" />
+    </operation>
+    <operation name="HRTrainingAppMofify">
+      <input name="HRTrainingAppMofify" message="tns:HRTrainingAppMofify" />
+      <output name="HRTrainingAppMofify_Result" message="tns:HRTrainingAppMofify_Result" />
+    </operation>
+    <operation name="HRTrainingLinesParticipantsInsert">
+      <input name="HRTrainingLinesParticipantsInsert" message="tns:HRTrainingLinesParticipantsInsert" />
+      <output name="HRTrainingLinesParticipantsInsert_Result" message="tns:HRTrainingLinesParticipantsInsert_Result" />
+    </operation>
+    <operation name="SumbitTrainingForApproval">
+      <input name="SumbitTrainingForApproval" message="tns:SumbitTrainingForApproval" />
+      <output name="SumbitTrainingForApproval_Result" message="tns:SumbitTrainingForApproval_Result" />
+    </operation>
+    <operation name="HRTransportRequisitionInsert">
+      <input name="HRTransportRequisitionInsert" message="tns:HRTransportRequisitionInsert" />
+      <output name="HRTransportRequisitionInsert_Result" message="tns:HRTransportRequisitionInsert_Result" />
+    </operation>
+    <operation name="SendLeaveForApproval">
+      <input name="SendLeaveForApproval" message="tns:SendLeaveForApproval" />
+      <output name="SendLeaveForApproval_Result" message="tns:SendLeaveForApproval_Result" />
+    </operation>
+    <operation name="SubmitTransportRequestForApproval">
+      <input name="SubmitTransportRequestForApproval" message="tns:SubmitTransportRequestForApproval" />
+      <output name="SubmitTransportRequestForApproval_Result" message="tns:SubmitTransportRequestForApproval_Result" />
+    </operation>
+    <operation name="HRAppraisalHeaderInsert">
+      <input name="HRAppraisalHeaderInsert" message="tns:HRAppraisalHeaderInsert" />
+      <output name="HRAppraisalHeaderInsert_Result" message="tns:HRAppraisalHeaderInsert_Result" />
+    </operation>
+    <operation name="HRAppraisalInsertLines">
+      <input name="HRAppraisalInsertLines" message="tns:HRAppraisalInsertLines" />
+      <output name="HRAppraisalInsertLines_Result" message="tns:HRAppraisalInsertLines_Result" />
+    </operation>
+    <operation name="Store_SendApprovalRequest">
+      <input name="Store_SendApprovalRequest" message="tns:Store_SendApprovalRequest" />
+      <output name="Store_SendApprovalRequest_Result" message="tns:Store_SendApprovalRequest_Result" />
+    </operation>
+    <operation name="Appraisal_SendApprovalRequest">
+      <input name="Appraisal_SendApprovalRequest" message="tns:Appraisal_SendApprovalRequest" />
+      <output name="Appraisal_SendApprovalRequest_Result" message="tns:Appraisal_SendApprovalRequest_Result" />
+    </operation>
+    <operation name="LeaveReimbursment_SendApprovalRequest">
+      <input name="LeaveReimbursment_SendApprovalRequest" message="tns:LeaveReimbursment_SendApprovalRequest" />
+      <output name="LeaveReimbursment_SendApprovalRequest_Result" message="tns:LeaveReimbursment_SendApprovalRequest_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting">
+      <input name="HR_Objectives_Setting" message="tns:HR_Objectives_Setting" />
+      <output name="HR_Objectives_Setting_Result" message="tns:HR_Objectives_Setting_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_KPI">
+      <input name="HR_Objectives_Setting_KPI" message="tns:HR_Objectives_Setting_KPI" />
+      <output name="HR_Objectives_Setting_KPI_Result" message="tns:HR_Objectives_Setting_KPI_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_KPI_Modify">
+      <input name="HR_Objectives_Setting_KPI_Modify" message="tns:HR_Objectives_Setting_KPI_Modify" />
+      <output name="HR_Objectives_Setting_KPI_Modify_Result" message="tns:HR_Objectives_Setting_KPI_Modify_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_KPI_Modify_Sup">
+      <input name="HR_Objectives_Setting_KPI_Modify_Sup" message="tns:HR_Objectives_Setting_KPI_Modify_Sup" />
+      <output name="HR_Objectives_Setting_KPI_Modify_Sup_Result" message="tns:HR_Objectives_Setting_KPI_Modify_Sup_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_CD">
+      <input name="HR_Objectives_Setting_CD" message="tns:HR_Objectives_Setting_CD" />
+      <output name="HR_Objectives_Setting_CD_Result" message="tns:HR_Objectives_Setting_CD_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_CD_Modify_Sup">
+      <input name="HR_Objectives_Setting_CD_Modify_Sup" message="tns:HR_Objectives_Setting_CD_Modify_Sup" />
+      <output name="HR_Objectives_Setting_CD_Modify_Sup_Result" message="tns:HR_Objectives_Setting_CD_Modify_Sup_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_CD_Modify">
+      <input name="HR_Objectives_Setting_CD_Modify" message="tns:HR_Objectives_Setting_CD_Modify" />
+      <output name="HR_Objectives_Setting_CD_Modify_Result" message="tns:HR_Objectives_Setting_CD_Modify_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_KRA">
+      <input name="HR_Objectives_Setting_KRA" message="tns:HR_Objectives_Setting_KRA" />
+      <output name="HR_Objectives_Setting_KRA_Result" message="tns:HR_Objectives_Setting_KRA_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_PT">
+      <input name="HR_Objectives_Setting_PT" message="tns:HR_Objectives_Setting_PT" />
+      <output name="HR_Objectives_Setting_PT_Result" message="tns:HR_Objectives_Setting_PT_Result" />
+    </operation>
+    <operation name="InsertPurchaseHeader">
+      <input name="InsertPurchaseHeader" message="tns:InsertPurchaseHeader" />
+      <output name="InsertPurchaseHeader_Result" message="tns:InsertPurchaseHeader_Result" />
+    </operation>
+    <operation name="PurchaseRequisitionLines">
+      <input name="PurchaseRequisitionLines" message="tns:PurchaseRequisitionLines" />
+      <output name="PurchaseRequisitionLines_Result" message="tns:PurchaseRequisitionLines_Result" />
+    </operation>
+    <operation name="HRTimesheetLinesModify">
+      <input name="HRTimesheetLinesModify" message="tns:HRTimesheetLinesModify" />
+      <output name="HRTimesheetLinesModify_Result" message="tns:HRTimesheetLinesModify_Result" />
+    </operation>
+    <operation name="HRTimesheetLinesApprovalStatus">
+      <input name="HRTimesheetLinesApprovalStatus" message="tns:HRTimesheetLinesApprovalStatus" />
+      <output name="HRTimesheetLinesApprovalStatus_Result" message="tns:HRTimesheetLinesApprovalStatus_Result" />
+    </operation>
+    <operation name="SendEmployeeRequisitionForApproval">
+      <input name="SendEmployeeRequisitionForApproval" message="tns:SendEmployeeRequisitionForApproval" />
+      <output name="SendEmployeeRequisitionForApproval_Result" message="tns:SendEmployeeRequisitionForApproval_Result" />
+    </operation>
+    <operation name="HRTimesheetLinesDelete">
+      <input name="HRTimesheetLinesDelete" message="tns:HRTimesheetLinesDelete" />
+      <output name="HRTimesheetLinesDelete_Result" message="tns:HRTimesheetLinesDelete_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_Modify_Sup">
+      <input name="HR_Objectives_Setting_Modify_Sup" message="tns:HR_Objectives_Setting_Modify_Sup" />
+      <output name="HR_Objectives_Setting_Modify_Sup_Result" message="tns:HR_Objectives_Setting_Modify_Sup_Result" />
+    </operation>
+    <operation name="HR_Objectives_Setting_Modify">
+      <input name="HR_Objectives_Setting_Modify" message="tns:HR_Objectives_Setting_Modify" />
+      <output name="HR_Objectives_Setting_Modify_Result" message="tns:HR_Objectives_Setting_Modify_Result" />
+    </operation>
+    <operation name="InsertImprestSurrenderHeader">
+      <input name="InsertImprestSurrenderHeader" message="tns:InsertImprestSurrenderHeader" />
+      <output name="InsertImprestSurrenderHeader_Result" message="tns:InsertImprestSurrenderHeader_Result" />
+    </operation>
+    <operation name="InsertImprestHeader">
+      <input name="InsertImprestHeader" message="tns:InsertImprestHeader" />
+      <output name="InsertImprestHeader_Result" message="tns:InsertImprestHeader_Result" />
+    </operation>
+    <operation name="InsertImprestLines">
+      <input name="InsertImprestLines" message="tns:InsertImprestLines" />
+      <output name="InsertImprestLines_Result" message="tns:InsertImprestLines_Result" />
+    </operation>
+    <operation name="InsertImprestSurrenderLines">
+      <input name="InsertImprestSurrenderLines" message="tns:InsertImprestSurrenderLines" />
+      <output name="InsertImprestSurrenderLines_Result" message="tns:InsertImprestSurrenderLines_Result" />
+    </operation>
+    <operation name="HrHREmployeeRequisitionsInsert">
+      <input name="HrHREmployeeRequisitionsInsert" message="tns:HrHREmployeeRequisitionsInsert" />
+      <output name="HrHREmployeeRequisitionsInsert_Result" message="tns:HrHREmployeeRequisitionsInsert_Result" />
+    </operation>
+    <operation name="SendApprovalRequestFromPortal">
+      <input name="SendApprovalRequestFromPortal" message="tns:SendApprovalRequestFromPortal" />
+      <output name="SendApprovalRequestFromPortal_Result" message="tns:SendApprovalRequestFromPortal_Result" />
+    </operation>
+    <operation name="Timesheet_SendApprovalRequest">
+      <input name="Timesheet_SendApprovalRequest" message="tns:Timesheet_SendApprovalRequest" />
+      <output name="Timesheet_SendApprovalRequest_Result" message="tns:Timesheet_SendApprovalRequest_Result" />
+    </operation>
+    <operation name="StoreRequisitionLines">
+      <input name="StoreRequisitionLines" message="tns:StoreRequisitionLines" />
+      <output name="StoreRequisitionLines_Result" message="tns:StoreRequisitionLines_Result" />
+    </operation>
+    <operation name="PurchReq_SendApprovalRequest">
+      <input name="PurchReq_SendApprovalRequest" message="tns:PurchReq_SendApprovalRequest" />
+      <output name="PurchReq_SendApprovalRequest_Result" message="tns:PurchReq_SendApprovalRequest_Result" />
+    </operation>
+    <operation name="Approver_SendLeaveForApproval">
+      <input name="Approver_SendLeaveForApproval" message="tns:Approver_SendLeaveForApproval" />
+      <output name="Approver_SendLeaveForApproval_Result" message="tns:Approver_SendLeaveForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendLeaveReimbursmentForApproval">
+      <input name="Approver_SendLeaveReimbursmentForApproval" message="tns:Approver_SendLeaveReimbursmentForApproval" />
+      <output name="Approver_SendLeaveReimbursmentForApproval_Result" message="tns:Approver_SendLeaveReimbursmentForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendEmpReqForApproval">
+      <input name="Approver_SendEmpReqForApproval" message="tns:Approver_SendEmpReqForApproval" />
+      <output name="Approver_SendEmpReqForApproval_Result" message="tns:Approver_SendEmpReqForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendTransReqForApproval">
+      <input name="Approver_SendTransReqForApproval" message="tns:Approver_SendTransReqForApproval" />
+      <output name="Approver_SendTransReqForApproval_Result" message="tns:Approver_SendTransReqForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendStoreReqForApproval">
+      <input name="Approver_SendStoreReqForApproval" message="tns:Approver_SendStoreReqForApproval" />
+      <output name="Approver_SendStoreReqForApproval_Result" message="tns:Approver_SendStoreReqForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendTravelReqForApproval">
+      <input name="Approver_SendTravelReqForApproval" message="tns:Approver_SendTravelReqForApproval" />
+      <output name="Approver_SendTravelReqForApproval_Result" message="tns:Approver_SendTravelReqForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendPurchaseReqForApproval">
+      <input name="Approver_SendPurchaseReqForApproval" message="tns:Approver_SendPurchaseReqForApproval" />
+      <output name="Approver_SendPurchaseReqForApproval_Result" message="tns:Approver_SendPurchaseReqForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendTimesheetForApproval">
+      <input name="Approver_SendTimesheetForApproval" message="tns:Approver_SendTimesheetForApproval" />
+      <output name="Approver_SendTimesheetForApproval_Result" message="tns:Approver_SendTimesheetForApproval_Result" />
+    </operation>
+    <operation name="Approver_SendPerfForApproval">
+      <input name="Approver_SendPerfForApproval" message="tns:Approver_SendPerfForApproval" />
+      <output name="Approver_SendPerfForApproval_Result" message="tns:Approver_SendPerfForApproval_Result" />
+    </operation>
+    <operation name="UpdateApprovalEntries">
+      <input name="UpdateApprovalEntries" message="tns:UpdateApprovalEntries" />
+      <output name="UpdateApprovalEntries_Result" message="tns:UpdateApprovalEntries_Result" />
+    </operation>
+    <operation name="Travel_SendApprovalRequest">
+      <input name="Travel_SendApprovalRequest" message="tns:Travel_SendApprovalRequest" />
+      <output name="Travel_SendApprovalRequest_Result" message="tns:Travel_SendApprovalRequest_Result" />
+    </operation>
+    <operation name="UploadRecords">
+      <input name="UploadRecords" message="tns:UploadRecords" />
+      <output name="UploadRecords_Result" message="tns:UploadRecords_Result" />
+    </operation>
+    <operation name="UploadSurrenderRecords">
+      <input name="UploadSurrenderRecords" message="tns:UploadSurrenderRecords" />
+      <output name="UploadSurrenderRecords_Result" message="tns:UploadSurrenderRecords_Result" />
+    </operation>
+    <operation name="UploadJobApplicationRecords">
+      <input name="UploadJobApplicationRecords" message="tns:UploadJobApplicationRecords" />
+      <output name="UploadJobApplicationRecords_Result" message="tns:UploadJobApplicationRecords_Result" />
+    </operation>
+    <operation name="SendAppraisalToSupervisor">
+      <input name="SendAppraisalToSupervisor" message="tns:SendAppraisalToSupervisor" />
+      <output name="SendAppraisalToSupervisor_Result" message="tns:SendAppraisalToSupervisor_Result" />
+    </operation>
+    <operation name="ReturnAppraisalToSupervisor">
+      <input name="ReturnAppraisalToSupervisor" message="tns:ReturnAppraisalToSupervisor" />
+      <output name="ReturnAppraisalToSupervisor_Result" message="tns:ReturnAppraisalToSupervisor_Result" />
+    </operation>
+    <operation name="ReturnAppraisalToAppraisee">
+      <input name="ReturnAppraisalToAppraisee" message="tns:ReturnAppraisalToAppraisee" />
+      <output name="ReturnAppraisalToAppraisee_Result" message="tns:ReturnAppraisalToAppraisee_Result" />
+    </operation>
+    <operation name="Approve_Appraisal">
+      <input name="Approve_Appraisal" message="tns:Approve_Appraisal" />
+      <output name="Approve_Appraisal_Result" message="tns:Approve_Appraisal_Result" />
+    </operation>
+    <operation name="ModifyImprestHeader">
+      <input name="ModifyImprestHeader" message="tns:ModifyImprestHeader" />
+      <output name="ModifyImprestHeader_Result" message="tns:ModifyImprestHeader_Result" />
+    </operation>
+    <operation name="ModifyImprestLines">
+      <input name="ModifyImprestLines" message="tns:ModifyImprestLines" />
+      <output name="ModifyImprestLines_Result" message="tns:ModifyImprestLines_Result" />
+    </operation>
+    <operation name="DeleteImprestHeader">
+      <input name="DeleteImprestHeader" message="tns:DeleteImprestHeader" />
+      <output name="DeleteImprestHeader_Result" message="tns:DeleteImprestHeader_Result" />
+    </operation>
+    <operation name="DeleteImprestLines">
+      <input name="DeleteImprestLines" message="tns:DeleteImprestLines" />
+      <output name="DeleteImprestLines_Result" message="tns:DeleteImprestLines_Result" />
+    </operation>
+  </portType>
+  <binding name="PortalWebService_Binding" type="tns:PortalWebService_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="HRLeaveAppInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRLeaveAppInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRLeaveAppInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRLeaveAppInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTransportAppInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTransportAppInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTransportAppInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTransportAppInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTrainingAppMofify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTrainingAppMofify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTrainingAppMofify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTrainingAppMofify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTrainingLinesParticipantsInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTrainingLinesParticipantsInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTrainingLinesParticipantsInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTrainingLinesParticipantsInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SumbitTrainingForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:SumbitTrainingForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SumbitTrainingForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SumbitTrainingForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTransportRequisitionInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTransportRequisitionInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTransportRequisitionInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTransportRequisitionInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendLeaveForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:SendLeaveForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendLeaveForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendLeaveForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SubmitTransportRequestForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:SubmitTransportRequestForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SubmitTransportRequestForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SubmitTransportRequestForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRAppraisalHeaderInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRAppraisalHeaderInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRAppraisalHeaderInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRAppraisalHeaderInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRAppraisalInsertLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRAppraisalInsertLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRAppraisalInsertLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRAppraisalInsertLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Store_SendApprovalRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Store_SendApprovalRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Store_SendApprovalRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Store_SendApprovalRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Appraisal_SendApprovalRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Appraisal_SendApprovalRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Appraisal_SendApprovalRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Appraisal_SendApprovalRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="LeaveReimbursment_SendApprovalRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:LeaveReimbursment_SendApprovalRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="LeaveReimbursment_SendApprovalRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="LeaveReimbursment_SendApprovalRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_KPI">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_KPI" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_KPI">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_KPI_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_KPI_Modify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_KPI_Modify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_KPI_Modify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_KPI_Modify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_KPI_Modify_Sup">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_KPI_Modify_Sup" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_KPI_Modify_Sup">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_KPI_Modify_Sup_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_CD">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_CD" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_CD">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_CD_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_CD_Modify_Sup">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_CD_Modify_Sup" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_CD_Modify_Sup">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_CD_Modify_Sup_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_CD_Modify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_CD_Modify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_CD_Modify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_CD_Modify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_KRA">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_KRA" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_KRA">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_KRA_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_PT">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_PT" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_PT">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_PT_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="InsertPurchaseHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:InsertPurchaseHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="InsertPurchaseHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="InsertPurchaseHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="PurchaseRequisitionLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:PurchaseRequisitionLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="PurchaseRequisitionLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="PurchaseRequisitionLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTimesheetLinesModify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTimesheetLinesModify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTimesheetLinesModify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTimesheetLinesModify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTimesheetLinesApprovalStatus">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTimesheetLinesApprovalStatus" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTimesheetLinesApprovalStatus">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTimesheetLinesApprovalStatus_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendEmployeeRequisitionForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:SendEmployeeRequisitionForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendEmployeeRequisitionForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendEmployeeRequisitionForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRTimesheetLinesDelete">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HRTimesheetLinesDelete" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRTimesheetLinesDelete">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRTimesheetLinesDelete_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_Modify_Sup">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_Modify_Sup" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_Modify_Sup">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_Modify_Sup_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HR_Objectives_Setting_Modify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HR_Objectives_Setting_Modify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HR_Objectives_Setting_Modify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HR_Objectives_Setting_Modify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="InsertImprestSurrenderHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:InsertImprestSurrenderHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="InsertImprestSurrenderHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="InsertImprestSurrenderHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="InsertImprestHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:InsertImprestHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="InsertImprestHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="InsertImprestHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="InsertImprestLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:InsertImprestLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="InsertImprestLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="InsertImprestLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="InsertImprestSurrenderLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:InsertImprestSurrenderLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="InsertImprestSurrenderLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="InsertImprestSurrenderLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HrHREmployeeRequisitionsInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:HrHREmployeeRequisitionsInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HrHREmployeeRequisitionsInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HrHREmployeeRequisitionsInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendApprovalRequestFromPortal">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:SendApprovalRequestFromPortal" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendApprovalRequestFromPortal">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendApprovalRequestFromPortal_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Timesheet_SendApprovalRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Timesheet_SendApprovalRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Timesheet_SendApprovalRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Timesheet_SendApprovalRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="StoreRequisitionLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:StoreRequisitionLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="StoreRequisitionLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="StoreRequisitionLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="PurchReq_SendApprovalRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:PurchReq_SendApprovalRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="PurchReq_SendApprovalRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="PurchReq_SendApprovalRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendLeaveForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendLeaveForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendLeaveForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendLeaveForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendLeaveReimbursmentForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendLeaveReimbursmentForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendLeaveReimbursmentForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendLeaveReimbursmentForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendEmpReqForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendEmpReqForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendEmpReqForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendEmpReqForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendTransReqForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendTransReqForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendTransReqForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendTransReqForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendStoreReqForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendStoreReqForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendStoreReqForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendStoreReqForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendTravelReqForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendTravelReqForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendTravelReqForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendTravelReqForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendPurchaseReqForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendPurchaseReqForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendPurchaseReqForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendPurchaseReqForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendTimesheetForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendTimesheetForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendTimesheetForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendTimesheetForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approver_SendPerfForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approver_SendPerfForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approver_SendPerfForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approver_SendPerfForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateApprovalEntries">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:UpdateApprovalEntries" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateApprovalEntries">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateApprovalEntries_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Travel_SendApprovalRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Travel_SendApprovalRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Travel_SendApprovalRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Travel_SendApprovalRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UploadRecords">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:UploadRecords" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UploadRecords">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UploadRecords_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UploadSurrenderRecords">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:UploadSurrenderRecords" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UploadSurrenderRecords">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UploadSurrenderRecords_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UploadJobApplicationRecords">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:UploadJobApplicationRecords" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UploadJobApplicationRecords">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UploadJobApplicationRecords_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendAppraisalToSupervisor">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:SendAppraisalToSupervisor" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendAppraisalToSupervisor">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendAppraisalToSupervisor_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnAppraisalToSupervisor">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:ReturnAppraisalToSupervisor" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnAppraisalToSupervisor">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnAppraisalToSupervisor_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnAppraisalToAppraisee">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:ReturnAppraisalToAppraisee" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnAppraisalToAppraisee">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnAppraisalToAppraisee_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Approve_Appraisal">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:Approve_Appraisal" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Approve_Appraisal">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Approve_Appraisal_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ModifyImprestHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:ModifyImprestHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ModifyImprestHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ModifyImprestHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ModifyImprestLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:ModifyImprestLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ModifyImprestLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ModifyImprestLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeleteImprestHeader">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:DeleteImprestHeader" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteImprestHeader">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteImprestHeader_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeleteImprestLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/PortalWebService:DeleteImprestLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteImprestLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteImprestLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PortalWebService">
+    <port name="PortalWebService_Port" binding="tns:PortalWebService_Binding">
+      <address location="http://muthonga:7053/CHS/WS/CHSLIVE/Codeunit/PortalWebService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

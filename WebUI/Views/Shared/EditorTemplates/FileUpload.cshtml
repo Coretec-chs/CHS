@@ -1,0 +1,30 @@
+@using WebUI.Utility
+
+@{
+    var vl = "";
+    if (ViewBag.FilePath != null && !String.IsNullOrWhiteSpace(ViewBag.FilePath))
+    {
+        vl = ViewBag.FilePath;
+    }
+}
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="input-group input-group-file">
+        <input type="text" class="form-control" readonly="readonly" value="@vl" />
+        @*<div class="input-group-btn">*@
+        <span class="input-group-btn">
+            <span class="btn btn-success btn-file btn-sm">
+                <i class="icon wb-upload" aria-hidden="true"></i>
+                @*<input type="file" name="@Html.IdFor(m => m)" id="@Html.IdFor(m => m)" multiple="">*@
+                @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), new { type = "file" })
+            </span>
+            @if (!String.IsNullOrWhiteSpace(vl))
+            {
+                <a class="btn btn-success btn-sm" title="View" href="@vl" target="_blank">
+                    <i class="icon wb-search" aria-hidden="true"></i>
+                </a>
+            }
+        </span>
+        @*</div>*@
+    </div>
+</div>

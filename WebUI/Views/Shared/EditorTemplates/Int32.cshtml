@@ -1,0 +1,61 @@
+@using WebUI.Utility
+@model int?
+
+@{
+    int i;
+    if (!Model.HasValue)
+    {
+        i = 0;
+    }
+    else
+    {
+        i = Model.Value;
+    }
+
+    var htmlAttributes = new RouteValueDictionary();
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "form-control input-sm " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control input-sm");
+    }
+
+    if (ViewBag.disabled != null && ViewBag.disabled != string.Empty)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+
+    if (ViewBag.placeholder != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+
+    if (ViewBag.@readonly != null)
+    {
+        htmlAttributes.Add("readonly", ViewBag.@readonly);
+    }
+
+    if (ViewBag.@onchange != null)
+    {
+        htmlAttributes.Add("onchange", ViewBag.@onchange);
+    }
+
+    if (ViewBag.@onclick != null)
+    {
+        htmlAttributes.Add("onclick", ViewBag.@onclick);
+    }
+    htmlAttributes.Add("autocomplete", "off");
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        @Html.TextBoxFor(m => m, htmlAttributes)
+        @*"",
+            ViewData.TemplateInfo.FormattedModelValue,
+            htmlAttributes)*@
+        @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+    </div>
+</div>

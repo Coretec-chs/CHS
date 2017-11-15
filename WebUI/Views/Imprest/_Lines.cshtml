@@ -1,0 +1,91 @@
+﻿@model IEnumerable<TravelAdvanceLineViewModel>
+
+<div class="panel panel-default">
+    <div class="panel-heading padding-3">
+
+        <h4 class="padding-left-10 white">Travel Advance Requisition Details</h4>
+    </div>
+    <div class="panel-body container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    @Html.ActionLink("Add New Line", "AddLine", null, null,
+                            new
+                            {
+                                @class = "btn btn-primary btn-sm",
+                                data_toggle = "modal",
+                                data_target = "#modalline",
+                                data_backdrop = "static",
+                                data_keyboard = "false"
+                            })
+                </p>
+                <table class="table table-hover table-striped table-bordered dt-responsive tb-line" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Route</th>
+                            <th>Daily Rate</th>
+                            <th>Begin Date</th>
+                            <th>No. of Days</th>
+                            <th>Total Amount</th>
+                            <th class="no-sort"></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Type</th>
+                            <th>Route</th>
+                            <th>Daily Rate</th>
+                            <th>Begin Date</th>
+                            <th>No. of Days</th>
+                            <th>Total Amount</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+            {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Advance_Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Destination_Code)
+                            </td>
+                            <td>
+                                @Html.ValueFor(modelItem => item.Daily_Rate_Amount, "{0:n2}")
+                            </td>
+                            <td>
+                                @Html.ValueFor(modelItem => item.Date_Issued, "{0:dd MMM yyyy}")
+                            </td>
+                            <td>
+                                @Html.ValueFor(modelItem => item.No_of_Days, "{0:n}")
+                            </td>
+                            <td>
+                                @Html.ValueFor(modelItem => item.Amount, "{0:n2}")
+                            </td>
+                            <td class="text-center" style="width:25px">
+                                @Html.NoEncodeActionLink("<i class='icon wb-edit'></i><span class='site-menu-title'> &nbspEdit </span>",
+                                    "Edit", "EditLine", null, new { id = item.Id }, new {
+                                        @class = "btn btn-icon btn-primary btn-outline btn-xs",
+                                        data_toggle = "modal",
+                                        data_target = "#modalline",
+                                        data_backdrop = "static",
+                                        data_keyboard = "false"
+                                    })
+                                @Html.NoEncodeActionLink("<i class='icon wb-trash'></i><span class='site-menu-title'> &nbspRemove </span>", "Remove", "Remove", null, new { id = item.Id }, new { @class = "btn btn-icon btn-danger btn-outline btn-xs" })
+
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

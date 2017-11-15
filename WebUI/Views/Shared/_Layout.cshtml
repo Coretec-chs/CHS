@@ -1,0 +1,293 @@
+﻿
+@using System.Web.Optimization;
+@using WebUI;
+@using RedWillow.MvcToastrFlash;
+<!DOCTYPE html>
+
+<html class="no-js css-menubar" lang="en">
+<!-- Mirrored from getbootstrapadmin.com/remark/base/dashboard/team.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jun 2016 10:42:13 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+    <title>CHS-Kenya|@ViewBag.Title</title>
+    <link rel="apple-touch-icon" href="~/Content/global/assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="~/Content/global/assets/images/favicon.ico">
+    @*<script src="~/Scripts/Chart.bundle.js"></script>*@
+    <!-- Stylesheets -->
+    @Styles.Render("~/Content/css")
+
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/Content/global/css/skintools.min3f0d.css">
+    <script src="~/Content/global/assets/js/sections/skintools.min.js"></script>
+
+    <!-- Plugins -->
+    @Styles.Render("~/Content/Plugins")
+    <!-- Fonts -->
+    @Styles.Render("~/Content/Font")
+    @*<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>*@
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+    @*[if lt IE 9]
+        <script src="~/Scripts/html5shiv.js"></script>
+        [endif]
+        [if lt IE 10]
+        <script src="~/Content/global/vendor/media-match/media.match.min.js"></script>
+        <script src="~/Scripts/respond.min.js"></script>
+        [endif]*@
+    <!-- Scripts -->
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script>
+        Breakpoints();
+    </script>
+</head>
+<body id="main_layout" class="site-menubar-unfold">
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top " role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+                    data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse"
+                    data-toggle="collapse">
+                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+            </button>
+            <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+                <img class="navbar-brand-logo" src="~/Content/global/assets/images/chslogo2.png" title="CHS">
+                <span class="navbar-brand-text"> Staff Portal</span>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
+                    data-toggle="collapse">
+                <span class="sr-only">Toggle Search</span>
+                <i class="icon wb-search" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="hidden-float" id="toggleMenubar">
+                        <a data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs" id="toggleFullscreen">
+                        <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Toggle fullscreen</span>
+                        </a>
+                    </li>
+                    <li class="hidden-float">
+                        <a class="icon wb-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
+                           role="button">
+                            <span class="sr-only">Toggle Search</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="dropdown">
+                        <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+                           data-animation="scale-up" role="button">
+                            <span class="avatar avatar-online">
+                                @*@{Html.RenderAction("_EmpPhoto", "empphoto");}*@
+                                <img style="height: 100%; width: 100%;" src="~/Content/global/portraits/my.jpg" alt="...">
+                                <i></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+                            </li>
+                            <li class="divider" role="presentation"></li>
+                            <li role="presentation">
+                                @*<a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>*@
+                                @Html.NoEncodeActionLink("<i class='icon wb-power' aria-hidden='true'></i>Log Off", "Log Off", "LogOff", "Account", null, new { role = "menuitem" })
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="toggleChat">
+                        <a data-toggle="site-sidebar" href="javascript:void(0)" title="Chat" data-url="../site-sidebar.tpl">
+                            <i class="icon wb-chat" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+            <!-- Site Navbar Seach -->
+            <div class="collapse navbar-search-overlap" id="site-navbar-search">
+                <form role="search">
+                    <div class="form-group">
+                        <div class="input-search">
+                            <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                            <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                            <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
+                                    data-toggle="collapse" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End Site Navbar Seach -->
+        </div>
+    </nav>
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <div>
+                <div>
+                    @*@Html.Partial("_Menu")*@
+                    @{Html.RenderAction("Index", "Menu");}
+                </div>
+            </div>
+        </div>
+        <div class="site-menubar-footer">
+            <a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip"
+               data-original-title="Settings">
+                <span class="icon wb-settings" aria-hidden="true"></span>
+            </a>
+            <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Lock">
+                <span class="icon wb-eye-close" aria-hidden="true"></span>
+            </a>
+            @Html.NoEncodeActionLink("<span class='icon wb-power' aria-hidden='true'></span>", "Log Off", "LogOff", "Account", null, new { data_placement = "top", data_toggle = "tooltip", data_original_title = "Logout" })
+        </div>
+    </div>
+    <!-- Page -->
+    <div class="page">
+        <div class="page-header page-header-bordered horizontal-menu-fixed">
+            <h1 class="page-title">@ViewBag.Title</h1>
+        </div>
+        <div class="page-content padding-10 container-fluid" style="display:none">
+            <div class="panel panel-primary padding-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="site-footer-legal"><small>© @DateTime.Today.Year <a href="javascript: void(0);">Centre for Health Solutions - Kenya</a></small></div>
+        <div class="site-footer-right">
+            Developed by <small><a href="javascript: void(0);">CoreTECH Systems and Solutions Ltd</a></small>
+        </div>
+    </footer>
+
+
+
+    <div id="modal-container" class="modal fade modal-info" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div id='myModal' class='modal fade in'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id='myModalContent'></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Core  -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/plugins")
+    @Scripts.Render("~/bundles/ImageUpload")
+    @Scripts.Render("~/bundles/toastr")
+    @Scripts.Render("~/bundles/main")
+    @RenderSection("scripts", required: false)
+    @Html.ToastrNotifications()
+
+    <script>
+        (function (document, window, $) {
+            'use strict';
+
+            var Site = window.Site;
+            $(document).ready(function () {
+                Site.run();
+            });
+        })(document, window, jQuery);
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '/Content/global/vendor/google/analytics.js',
+          'ga');
+
+        ga('create', 'UA-65522665-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        (function (document, window, $) {
+            $.blockUI({ message: '<h5><img src="/Content/ajax-loader.gif" /> Loading...</h5>' });
+        })(document, window, jQuery);
+        $(document).ready(function () {
+            $.unblockUI();
+            $('.page-content').toggle();
+        });
+    </script>
+
+    <script>
+        var alertmsg = '';
+        if ('@ViewBag.Message' != null && '@ViewBag.Message' != '') {
+            alertmsg = '@ViewBag.Message';
+        } else if ('@(TempData["Message"])' != null && '@(TempData["Message"])' != '') {
+            alertmsg = '@(TempData["Message"])';
+        }
+        ShowErrorPopup(alertmsg);
+        function ShowErrorPopup(msg) {
+            //swal("Here's a message!", "It's pretty, isn't it?")
+            if (msg != null && msg != '') {
+                var msgarray = msg.split(',');
+
+                swal(msgarray[0], msgarray[1], msgarray[2]);
+            }
+        };
+    </script>
+
+    <script>
+        var toastrmsg = '';
+        if ('@ViewBag.Toastrmsg' != null && '@ViewBag.Toastrmsg' != '') {
+            toastrmsg = '@ViewBag.Toastrmsg';
+        } else if ('@(TempData["Toastrmsg"])' != null && '@(TempData["Toastrmsg"])' != '') {
+            toastrmsg = '@(TempData["Toastrmsg"])';
+        }
+        if (toastrmsg != null && toastrmsg != '') {
+            toastrAlert(toastrmsg);
+        }
+    </script>
+
+
+
+
+</body>
+
+
+
+</html>

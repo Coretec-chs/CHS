@@ -1,0 +1,145 @@
+﻿@model TravelAdvanceViewModel
+
+
+@{
+    var appcode = string.IsNullOrWhiteSpace(Model.No) ? "New" : Model.No;
+    ViewBag.Title = "Travel Advance Requisition [" + appcode + "]";
+    TempData["Module"] = "Travel";
+    TempData["MenuTag"] = "Imprest";
+    var readStatus = string.Empty;
+    var disabled = string.Empty;
+    if (Model.Status != "New" && Model.Status != "Draft")
+    {
+        readStatus = "readonly";
+        disabled = "disabled";
+    }
+}
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.EditorFor(m => m.No, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-2">
+                    @Html.EditorFor(m => m.Account_No, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Payee, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Responsibility_Center_Name, new { @readonly = "readonly" })
+                    @Html.HiddenFor(m => m.Responsibility_Center)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Date, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Global_Dimension_1_Code, new { selectList = Model.DonorList, targetname = "Shortcut_Dimension_2_Code", listurl = Url.Action("GetProject"), disabled = disabled })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Shortcut_Dimension_2_Code, new { selectList = Model.ProjectList, disabled = disabled })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Shortcut_Dimension_3_Code, new { selectList = Model.ProgramAreaList, disabled = disabled })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Shortcut_Dimension_4_Code, new { selectList = Model.ActivityList, disabled = disabled })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Shortcut_Dimension_5_Code, new { selectList = Model.CountyList, disabled = disabled })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Account_Type, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Currency_Code, new { selectList = Model.CountyList, disabled = disabled })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Status, new { @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.EditorFor(m => m.Purpose, new { @readOnly = readStatus })
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        @if (Model.No == null)
+        {
+            <div>
+               @Html.Action("Lines", new { id = "-1" })
+            </div>
+        }
+        else
+        {
+            <div>
+                @Html.Action("Lines", new { id = Model.No })
+            </div>
+        }
+    </div>
+    <div class="row padding-bottom-10">
+        <div class="col-md-12">
+            @if (Model.Status == "Draft")
+                {
+                <div class="form-group pull-right">
+                    <input type="submit" name="action" value="Save" class="btn btn-primary" data-submit="" />
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+            else if (Model.Status == "Pending")
+            {
+                <div class="form-group pull-right">
+                    <input type="submit" name="action" value="Save" class="btn btn-primary" data-submit="" />
+                    <input type="submit" name="action" value="Send for Approval" class="btn btn-success" data-submit="" />
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+            else
+            {
+                <div class="form-group pull-right">
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+        </div>
+    </div>
+}
+
+
+<div id='modalline' class="modal fade modal-info rebind" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-parent="#divQual"
+     data-url="@Url.Action("Lines", new { newList = false })">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/Site/main.js")"></script>
+    <script src="@Url.Content("~/Scripts/Site/site-controls.js")"></script>
+    <script>
+        $('.datepicker').datetimepicker({
+            //defaultDate: new Date(),
+            format: 'DD MMM YYYY',
+            showTodayButton: true,
+            showClear: true,
+            showClose: true,
+            ignoreReadonly: true,
+            minDate: 'now',
+            daysOfWeekDisabled: [0, 6]
+        });
+
+    </script>
+}

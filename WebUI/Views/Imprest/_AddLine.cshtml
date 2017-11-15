@@ -1,0 +1,124 @@
+﻿@model TravelAdvanceLineViewModel
+
+
+
+<div class="modal-body">
+    @using (Html.BeginForm("Imprest", "AddLine", FormMethod.Post, new { id = "fline" }))
+    {
+        <div id="divModalLine">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">Travel Advance Line</h4>
+            </div>
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.Line_No)
+            @Html.HiddenFor(m => m.No)
+
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.EditorFor(m => m.Advance_Type, new { selectList = Model.AdvanceTypeList, @onchange = "GetRate()" })
+                    @Html.EditorFor(m => m.Destination_Code, new { selectList = Model.DestinationCodeList, @onchange = "GetRate()" })
+                    @Html.EditorFor(m => m.Daily_Rate_Amount, new { @readonly = "readonly" })
+                    @Html.EditorFor(m => m.No_of_Days, new { @onchange = "GetAmount()" })
+                    @Html.EditorFor(m => m.Amount, new { @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="row padding-bottom-10">
+                <div class="col-md-12">
+                    <div class="form-group pull-right">
+                        <input type="submit" value="Save" class="btn btn-primary" data-submit="" />
+                        @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@Html.Partial("_ModalScripts")
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/Shared/main.js")"></script>
+    <script>
+        $('.datepicker').datetimepicker({
+            //defaultDate: new Date(),
+            format: 'DD MMM YYYY',
+            showTodayButton: true,
+            showClear: true,
+            showClose: true,
+            ignoreReadonly: true,
+            minDate: 'now',
+            daysOfWeekDisabled: [0, 6]
+        });
+
+
+        function GetRate() {
+            if ($('#Advance_Type').val() == '' || $('#Advance_Type').val() == 'undefinided' || $('#Advance_Type').val() == null
+                || $('#Destination_Code').val() == '' || $('#Destination_Code').val() == 'undefinided' || $('#Destination_Code').val() == null) {
+                $('#Daily_Rate_Amount').val(null);
+                $('#Amount').val(null);
+            } else {
+                var atype = $('#Advance_Type').val();
+                var dest = $('#Destination_Code').val();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("GetDailyRate")',
+                    data: { 'advanceType': atype, 'destination': dest },
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#Daily_Rate_Amount').val(data.dailyRate);
+                        GetAmount();
+                    },
+                    error: function () {
+                        return false;
+                    }
+                });
+            }
+        }
+
+        function GetAmount() {
+            if ($('#No_of_Days').val() == '' || $('#No_of_Days').val() == 'undefinided' || $('#No_of_Days').val() == null
+                || $('#Daily_Rate_Amount').val() == '' || $('#Daily_Rate_Amount').val() == 'undefinided' || $('#Daily_Rate_Amount').val() == null) {
+                $('#Amount').val(null);
+            } else {
+                var days = $('#No_of_Days').val();
+                var amount = days * data.dailyRate;
+                $('#Amount').val(amount);
+            }
+
+        }
+
+        $('#fline').submit(function (e) {
+            //e.preventDefault();
+            $.blockUI({ message: '<h5><img src="/Content/ajax-loader.gif" /> Loading...</h5>' });
+            var options = {
+                target: '#divModalLine',
+                targetReplace: true,
+                cache: false,
+                dataType: "json",
+                success: submitResponse
+            };
+
+            $(this).ajaxSubmit(options);
+            return false;
+        });
+
+        function submitResponse(data) {
+            $('#divModalLine').replaceWith(data.html);
+            Select2.rebind();
+            DateControl.rebind();
+            toastrAlert(data.msg);
+            $.unblockUI();
+            if (data.success) {
+                $('#modalqual').modal('hide');
+            }
+        }
+
+    </script>
+}
+
+

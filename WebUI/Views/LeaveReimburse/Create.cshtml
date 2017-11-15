@@ -1,0 +1,131 @@
+﻿@model LeaveReimburseViewModel
+
+
+@{
+    var appcode = string.IsNullOrWhiteSpace(Model.Application_Code) ? "New" : Model.Application_Code;
+    ViewBag.Title = "Leave Reimbursement [" + appcode + "]";
+    TempData["Module"] = "Leave";
+    TempData["MenuTag"] = "LeaveReimburse";
+    var readStatus = string.Empty;
+    var disabled = string.Empty;
+    var modalTemplate = "ModalButton";
+    if (Model.Status != "New" && Model.Status != "Draft")
+    {
+        readStatus = "readonly";
+        disabled = "disabled";
+        modalTemplate = "String";
+    }
+}
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.EditorFor(m => m.Application_Code, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-2">
+                    @Html.EditorFor(m => m.Employee_No, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Names, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Responsibility_Center_name, new { @readonly = "readonly" })
+                    @Html.HiddenFor(m => m.Responsibility_Center)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Application_Date, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Leave_Application_No, modalTemplate, new
+               {
+                   @id = "Leave_Application_No",
+                   data_target = "#leaveModal",
+                   modalUrl = Url.Action("LeaveGrid", new { id = Model.Application_Code ?? "LV" })
+               })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Leave_Type, new { @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Start_Date, new { @readOnly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Days_Applied, new { @readOnly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Return_Date, new { @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Days_to_Reimburse, new { @readonly = readStatus })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Max_to_Reimburse, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Status, new { @readonly = "readonly" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row padding-bottom-10">
+        <div class="col-md-12">
+            @if (Model.Status == "Draft")
+            {
+                <div class="form-group pull-right">
+                    <input type="submit" name="action" value="Save" class="btn btn-primary" data-submit="" />
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+            else if (Model.Status == "New")
+            {
+                <div class="form-group pull-right">
+                    <input type="submit" name="action" value="Save" class="btn btn-primary" data-submit="" />
+                    <input type="submit" name="action" value="Send for Approval" class="btn btn-success" data-submit="" />
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+            else
+            {
+                <div class="form-group pull-right">
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<!-- Modal -->
+<div class="modal fade modal-info loading" id="leaveModal" aria-hidden="true"
+     aria-labelledby="activityModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/Site/site-controls.js")"></script>
+    <script>
+        function SelectLeave(code, type, sdate, rdate, dapp, dmax) {
+            $('#Leave_Application_No').val(code);
+            $('#Leave_Application_No_id').val(code);
+            $('#Leave_Type').val(type);
+            $('#Start_Date').val(sdate);
+            $('#Return_Date').val(rdate);
+            $('#Days_Applied').val(dapp);
+            $('#Max_to_Reimburse').val(dmax);
+            $('#leaveModal').modal('hide');
+        }
+    </script>
+}

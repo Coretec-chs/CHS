@@ -1,0 +1,35 @@
+@using WebUI.Utility
+@model object
+
+@{
+    var htmlAttributes = new RouteValueDictionary();
+    if (ViewBag.ClearTextField == true)
+    {
+        htmlAttributes.Add("class", "form-control input-block-level clear-text-field");
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control input-block-level");
+    }
+
+    if (ViewBag.placeholder != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+
+    if (ViewBag.@readonly != null && ViewBag.@readonly != string.Empty)
+    {
+        htmlAttributes.Add("readonly", ViewBag.@readonly);
+    }
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        @Html.TextAreaFor(
+            m => m,
+            4, 8, htmlAttributes)
+        @*ViewBag.ClearTextField == true ? new { @class = "form-control input-block-level clear-text-field text-uppercase", placeholder = "Enter Activity Description or Select using button below" } : new { @class = "form-control input-block-level text-uppercase", placeholder = "Enter Activity Description or Select using button below" })*@
+        @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+    </div>
+</div>

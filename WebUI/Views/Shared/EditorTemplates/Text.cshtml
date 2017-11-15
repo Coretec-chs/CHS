@@ -1,0 +1,38 @@
+@using WebUI.Utility
+@model object
+
+@{
+    var htmlAttributes = new RouteValueDictionary();
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "form-control clear-text-field input-block-level input-sm " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control clear-text-field input-block-level input-sm");
+    }
+
+    if (ViewBag.@readonly != null && ViewBag.@readonly != string.Empty)
+    {
+        htmlAttributes.Add("readonly", ViewBag.@readonly);
+    }
+
+    if (ViewBag.disabled != null && ViewBag.disabled != string.Empty)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+
+    htmlAttributes.Add("autocomplete", "off");
+
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error")) ">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        @Html.TextBox(
+            "",
+            ViewData.TemplateInfo.FormattedModelValue.ToString(),
+            htmlAttributes)
+        @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+    </div>
+</div>

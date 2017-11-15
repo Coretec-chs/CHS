@@ -1,0 +1,1773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25CCED30-89B3-463A-8E0D-1DEE2667B5B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebUI</RootNamespace>
+    <AssemblyName>WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxDropDownList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Projects\samples\AjaxDropDownList\bin\Debug\AjaxDropDownList.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FoolproofValidation, Version=0.9.5851.39121, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Foolproof.0.9.4518\lib\net45\FoolproofValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.3.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.3\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MarkdownDeep, Version=1.5.4615.26275, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MarkdownDeep.Full.1.5\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.0\lib\net45\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.0\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.3.0\lib\net45\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Omu.Encrypto, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Omu.Encrypto.1.0.0\lib\net35\Omu.Encrypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.1.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ValueInjecter.3.1.1.5\lib\net40\Omu.ValueInjecter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RedWillow.MvcToastrFlash, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedWillow.MvcToastrFlash.1.0.0\lib\net45\RedWillow.MvcToastrFlash.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\Bootstappers.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WindsorConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ImprestController.cs" />
+    <Compile Include="Controllers\LeaveApplicationController.cs" />
+    <Compile Include="Controllers\LeaveReimburseController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NavCruder.cs" />
+    <Compile Include="Controllers\NavCrudere.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ActionLinkHelper.cs" />
+    <Compile Include="Helpers\LabelExtensions.cs" />
+    <Compile Include="Helpers\ReportHelper.cs" />
+    <Compile Include="Helpers\ScriptHelper.cs" />
+    <Compile Include="Mappers\Injections\EntitiesToInts.cs" />
+    <Compile Include="Mappers\Injections\IntsToEntities.cs" />
+    <Compile Include="Mappers\Injections\NormalToNullables.cs" />
+    <Compile Include="Mappers\Injections\NullablesToNormal.cs" />
+    <Compile Include="Mappers\IProMapper.cs" />
+    <Compile Include="Mappers\MapperConfig.cs" />
+    <Compile Include="Mappers\ProMapper.cs" />
+    <Compile Include="Models\Account\AccountViewModels.cs" />
+    <Compile Include="Models\Attributes\LoginUniqueAttribute.cs" />
+    <Compile Include="Models\Attributes\MinIntAttribute.cs" />
+    <Compile Include="Models\Attributes\MultiMaxLenValidationAttribute.cs" />
+    <Compile Include="Models\Attributes\StrLenAttribute.cs" />
+    <Compile Include="Models\Attributes\ValReqAttribute.cs" />
+    <Compile Include="Models\Display\ErrorDisplay.cs" />
+    <Compile Include="Models\Account\IdentityModels.cs" />
+    <Compile Include="Models\Inputs\DeleteConfirmInput.cs" />
+    <Compile Include="Models\Inputs\Employee\EmployeeViewModel.cs" />
+    <Compile Include="Models\Inputs\Input.cs" />
+    <Compile Include="Models\Inputs\Leave\LeaveApplicationViewModel.cs" />
+    <Compile Include="Models\Inputs\Leave\LeaveReimburseViewModel.cs" />
+    <Compile Include="Models\Inputs\SearchItem.cs" />
+    <Compile Include="Models\Account\ManageViewModels.cs" />
+    <Compile Include="Models\Inputs\Travel\TravelAdvanceLineViewModel.cs" />
+    <Compile Include="Models\Inputs\Travel\TravelAdvanceViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utility\AppExtensions.cs" />
+    <Compile Include="Utility\DateTimeExtensions.cs" />
+    <Compile Include="Utility\DecimalModelBinder.cs" />
+    <Compile Include="Utility\DropDownLists.cs" />
+    <Compile Include="Utility\Email.cs" />
+    <Compile Include="Utility\EnumerableExtensions.cs" />
+    <Compile Include="Utility\EnumTypes.cs" />
+    <Compile Include="Utility\HtmlUtil.cs" />
+    <Compile Include="Utility\LinqExtension.cs" />
+    <Compile Include="Utility\LocalizationHelper.cs" />
+    <Compile Include="Utility\MarkdownHelper.cs" />
+    <Compile Include="Utility\ResultSet.cs" />
+    <Compile Include="Utility\Validation.cs" />
+    <Compile Include="Utility\ViewExtensions.cs" />
+    <Compile Include="Utility\WebUtils.cs" />
+    <Compile Include="Utility\WindsorControllerFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Scripts\mvcfoolproof.unobtrusive.js" />
+    <Content Include="Scripts\mvcfoolproof.unobtrusive.min.js" />
+    <Content Include="Scripts\MvcFoolproofJQueryValidation.js" />
+    <Content Include="Scripts\MvcFoolproofJQueryValidation.min.js" />
+    <Content Include="Scripts\MvcFoolproofValidation.js" />
+    <Content Include="Scripts\MvcFoolproofValidation.min.js" />
+    <Content Include="Content\ajax-loader.gif" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\select2.css" />
+    <Content Include="Content\css\select2.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.bootstrap.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.bootstrap.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.bootstrap4.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.bootstrap4.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.colVis.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.colVis.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.flash.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.flash.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.foundation.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.foundation.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.html5.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.html5.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.jqueryui.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.jqueryui.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.print.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.print.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.semanticui.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\buttons.semanticui.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\dataTables.buttons.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\js\dataTables.buttons.min.js" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\swf\flashExport.swf" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\images\sort_asc.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\images\sort_both.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\images\sort_desc.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.foundation.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.foundation.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.semanticui.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\jquery.dataTables.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.16\js\jquery.dataTables.min.js" />
+    <Content Include="Content\DataTables\datatables.css" />
+    <Content Include="Content\DataTables\datatables.js" />
+    <Content Include="Content\DataTables\datatables.min.css" />
+    <Content Include="Content\DataTables\datatables.min.js" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\js\dataTables.fixedHeader.js" />
+    <Content Include="Content\DataTables\FixedHeader-3.1.3\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\DataTables\JSZip-2.5.0\jszip.js" />
+    <Content Include="Content\DataTables\JSZip-2.5.0\jszip.min.js" />
+    <Content Include="Content\DataTables\pdfmake-0.1.32\pdfmake.js" />
+    <Content Include="Content\DataTables\pdfmake-0.1.32\pdfmake.min.js" />
+    <Content Include="Content\DataTables\pdfmake-0.1.32\vfs_fonts.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\dataTables.responsive.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\dataTables.responsive.min.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.bootstrap.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.bootstrap.min.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.bootstrap4.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.bootstrap4.min.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.foundation.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.foundation.min.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.jqueryui.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.jqueryui.min.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.semanticui.js" />
+    <Content Include="Content\DataTables\Responsive-2.2.0\js\responsive.semanticui.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\js\dataTables.rowGroup.js" />
+    <Content Include="Content\DataTables\RowGroup-1.0.2\js\dataTables.rowGroup.min.js" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\js\dataTables.scroller.js" />
+    <Content Include="Content\DataTables\Scroller-1.4.3\js\dataTables.scroller.min.js" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.foundation.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\Select-1.2.3\js\dataTables.select.js" />
+    <Content Include="Content\DataTables\Select-1.2.3\js\dataTables.select.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\global\assets\css\bootstrap-fileupload.min.css" />
+    <Content Include="Content\global\assets\css\site.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\alertify.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\animation.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\highlight.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\lightbox.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\masonry.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\rating.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\scrollable.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\advanced\toastr.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\calendar.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\contacts.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\documents.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\forum.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\location.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\mailbox.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\media.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\message.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\notebook.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\projects.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\taskboard.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\apps\work.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\charts\chartist.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\charts\chartjs.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\charts\flot.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\charts\pie-progress.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\charts\sparkline.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\dashboard\analytics.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\dashboard\ecommerce.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\dashboard\team.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\dashboard\v1.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\dashboard\v2.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\forms\advanced.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\forms\image-cropping.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\forms\layouts.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\forms\masks.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\forms\validation.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\layouts\headers.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\layouts\panel-transition.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\code-editor.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\email.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\errors.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\forgot-password.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\gallery-grid.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\gallery.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\invoice.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\lockscreen.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\login-v2.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\login-v3.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\login.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\maintenance.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\map.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\profile.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\register-v2.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\register-v3.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\register.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\search-result.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\site-map.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\pages\user.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\alerts.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\breadcrumbs.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\chat.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\navbars.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\pagination.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\ribbon.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\testimonials.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\structure\timeline.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\tables\datatable.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\tables\jsgrid.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\badges-labels.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\buttons.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\carousel.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\colors.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\dropdowns.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\icon.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\icons.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\modals.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\panel-portlets.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\progress-bars.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\uikit\utilities.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\widgets\chart.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\widgets\data.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\widgets\social.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\widgets\statistics.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\css\widgets\weather.min3f0d.css" />
+    <Content Include="Content\global\assets\examples\images\browser\chrome-logo.png" />
+    <Content Include="Content\global\assets\examples\images\browser\firefox-logo.png" />
+    <Content Include="Content\global\assets\examples\images\browser\internet-logo.png" />
+    <Content Include="Content\global\assets\examples\images\browser\opera-logo.png" />
+    <Content Include="Content\global\assets\examples\images\browser\safari-logo.png" />
+    <Content Include="Content\global\assets\examples\images\country\australia-icon.png" />
+    <Content Include="Content\global\assets\examples\images\country\canada-icon.png" />
+    <Content Include="Content\global\assets\examples\images\country\china-icon.png" />
+    <Content Include="Content\global\assets\examples\images\country\germany-icon.png" />
+    <Content Include="Content\global\assets\examples\images\country\uk-icon.png" />
+    <Content Include="Content\global\assets\examples\images\country\usa-icon.png" />
+    <Content Include="Content\global\assets\examples\images\dashboard2-header.jpg" />
+    <Content Include="Content\global\assets\examples\images\lockscreen.jpg" />
+    <Content Include="Content\global\assets\examples\images\login.jpg" />
+    <Content Include="Content\global\assets\examples\images\login1.jpg" />
+    <Content Include="Content\global\assets\examples\images\login1.png" />
+    <Content Include="Content\global\assets\examples\images\login3.jpg" />
+    <Content Include="Content\global\assets\examples\images\login_helb.jpg" />
+    <Content Include="Content\global\assets\examples\images\login_old.jpg" />
+    <Content Include="Content\global\assets\examples\images\login_realtor.jpg" />
+    <Content Include="Content\global\assets\examples\images\login_recruit.jpg" />
+    <Content Include="Content\global\assets\examples\images\modal\accordion-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\fillin-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\form-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\grid-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\modal-position-sidebar.png" />
+    <Content Include="Content\global\assets\examples\images\modal\modal-position.png" />
+    <Content Include="Content\global\assets\examples\images\modal\multiple-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\size-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\style-modal.png" />
+    <Content Include="Content\global\assets\examples\images\modal\sweet-alert.png" />
+    <Content Include="Content\global\assets\examples\images\modal\tab-modal.png" />
+    <Content Include="Content\global\assets\examples\images\navbar\fixed-to-bottom.png" />
+    <Content Include="Content\global\assets\examples\images\navbar\fixed-to-top.png" />
+    <Content Include="Content\global\assets\examples\images\poster.jpg" />
+    <Content Include="Content\global\assets\examples\images\products\applewatch.png" />
+    <Content Include="Content\global\assets\examples\images\products\imac.png" />
+    <Content Include="Content\global\assets\examples\images\products\iphone.png" />
+    <Content Include="Content\global\assets\examples\images\products\macmouse.png" />
+    <Content Include="Content\global\assets\examples\js\advanced\animation.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\bootbox-sweetalert.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\context-menu.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\highlight.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\lightbox.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\maps-google.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\scrollable.min.js" />
+    <Content Include="Content\global\assets\examples\js\advanced\treeview.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\calendar.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\contacts.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\documents.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\forum.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\location.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\mailbox.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\media.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\message.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\notebook.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\projects.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\taskboard.min.js" />
+    <Content Include="Content\global\assets\examples\js\apps\work.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\c3.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\chartist.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\chartjs.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\flot.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\gauges.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\morris.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\peity.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\pie-progress.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\rickshaw.min.js" />
+    <Content Include="Content\global\assets\examples\js\charts\sparkline.min.js" />
+    <Content Include="Content\global\assets\examples\js\dashboard\analytics.min.js" />
+    <Content Include="Content\global\assets\examples\js\dashboard\ecommerce.min.js" />
+    <Content Include="Content\global\assets\examples\js\dashboard\team.min.js" />
+    <Content Include="Content\global\assets\examples\js\dashboard\v1.min.js" />
+    <Content Include="Content\global\assets\examples\js\dashboard\v2.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\advanced.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\editable.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\editor-summernote.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\image-cropping.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\uploads.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\validation.min.js" />
+    <Content Include="Content\global\assets\examples\js\forms\wizard.min.js" />
+    <Content Include="Content\global\assets\examples\js\layouts\panel-transition.min.js" />
+    <Content Include="Content\global\assets\examples\js\pages\code-editor.min.js" />
+    <Content Include="Content\global\assets\examples\js\pages\faq.min.js" />
+    <Content Include="Content\global\assets\examples\js\pages\gallery.min.js" />
+    <Content Include="Content\global\assets\examples\js\pages\map-google.min.js" />
+    <Content Include="Content\global\assets\examples\js\pages\map-vector.min.js" />
+    <Content Include="Content\global\assets\examples\js\structure\timeline.min.js" />
+    <Content Include="Content\global\assets\examples\js\tables\bootstrap.min.js" />
+    <Content Include="Content\global\assets\examples\js\tables\datatable.min.js" />
+    <Content Include="Content\global\assets\examples\js\tables\editable.min.js" />
+    <Content Include="Content\global\assets\examples\js\tables\footable.min.js" />
+    <Content Include="Content\global\assets\examples\js\tables\jsgrid-db.min.js" />
+    <Content Include="Content\global\assets\examples\js\tables\jsgrid.min.js" />
+    <Content Include="Content\global\assets\examples\js\uikit\carousel.min.js" />
+    <Content Include="Content\global\assets\examples\js\uikit\icon.min.js" />
+    <Content Include="Content\global\assets\examples\js\uikit\panel-actions.min.js" />
+    <Content Include="Content\global\assets\examples\js\uikit\panel-structure.min.js" />
+    <Content Include="Content\global\assets\examples\js\uikit\progress-bars.min.js" />
+    <Content Include="Content\global\assets\examples\js\uikit\tooltip-popover.min.js" />
+    <Content Include="Content\global\assets\examples\js\widgets\chart.min.js" />
+    <Content Include="Content\global\assets\examples\js\widgets\weather.min.js" />
+    <Content Include="Content\global\assets\images\apple-touch-icon.png" />
+    <Content Include="Content\global\assets\images\chsbg.jpg" />
+    <Content Include="Content\global\assets\images\chslogo.png" />
+    <Content Include="Content\global\assets\images\chslogo1.png" />
+    <Content Include="Content\global\assets\images\chslogo2.png" />
+    <Content Include="Content\global\assets\images\chslogo3.png" />
+    <Content Include="Content\global\assets\images\chslogo4.png" />
+    <Content Include="Content\global\assets\images\EBK.png" />
+    <Content Include="Content\global\assets\images\ebklogo.ico" />
+    <Content Include="Content\global\assets\images\favicon.ico" />
+    <Content Include="Content\global\assets\images\helb.jpg" />
+    <Content Include="Content\global\assets\images\helb.png" />
+    <Content Include="Content\global\assets\images\helb2.png" />
+    <Content Include="Content\global\assets\images\login.jpg" />
+    <Content Include="Content\global\assets\images\logo%402x.png" />
+    <Content Include="Content\global\assets\images\logo-blue%402x.png" />
+    <Content Include="Content\global\assets\images\logo-blue.png" />
+    <Content Include="Content\global\assets\images\logo.ico" />
+    <Content Include="Content\global\assets\images\logo.png" />
+    <Content Include="Content\global\assets\images\logo1.png" />
+    <Content Include="Content\global\assets\images\logo2.ico" />
+    <Content Include="Content\global\assets\images\logo2.png" />
+    <Content Include="Content\global\assets\images\noimage.png" />
+    <Content Include="Content\global\assets\images\noimage1.png" />
+    <Content Include="Content\global\assets\images\recruitment_bg2.jpg" />
+    <Content Include="Content\global\assets\images\recuitment_bg.png" />
+    <Content Include="Content\global\assets\js\app.min.js" />
+    <Content Include="Content\global\assets\js\bootstrap-fileupload.min.js" />
+    <Content Include="Content\global\assets\js\configs\config-tour.min.js" />
+    <Content Include="Content\global\assets\js\pages-user-profile.js" />
+    <Content Include="Content\global\assets\js\sections\gridmenu.min.js" />
+    <Content Include="Content\global\assets\js\sections\menu.min.js" />
+    <Content Include="Content\global\assets\js\sections\menubar.min.js" />
+    <Content Include="Content\global\assets\js\sections\sidebar.min.js" />
+    <Content Include="Content\global\assets\js\sections\skintools.min.js" />
+    <Content Include="Content\global\assets\js\site.min.js" />
+    <Content Include="Content\global\css\bootstrap-extend.min3f0d.css" />
+    <Content Include="Content\global\css\bootstrap.min3f0d.css" />
+    <Content Include="Content\global\css\skintools.min3f0d.css" />
+    <Content Include="Content\global\fonts\7-stroke\7-stroke.min3f0d.css" />
+    <Content Include="Content\global\fonts\7-stroke\Pe-icon-7-strokebb1d.svg" />
+    <Content Include="Content\global\fonts\brand-icons\brand-icons.min3f0d.css" />
+    <Content Include="Content\global\fonts\brand-icons\brand-iconsa29e.svg" />
+    <Content Include="Content\global\fonts\font-awesome\font-awesome.min3f0d.css" />
+    <Content Include="Content\global\fonts\font-awesome\fontawesome-webfont914c.svg" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons.min3f0d.css" />
+    <Content Include="Content\global\fonts\ionicons\ionicons.min3f0d.css" />
+    <Content Include="Content\global\fonts\ionicons\ionicons790f.svg" />
+    <Content Include="Content\global\fonts\material-design\material-design.min3f0d.css" />
+    <Content Include="Content\global\fonts\mfglabs\mfglabs.min3f0d.css" />
+    <Content Include="Content\global\fonts\mfglabs\mfglabsiconset-webfont.svg" />
+    <Content Include="Content\global\fonts\octicons\octicons.min3f0d.css" />
+    <Content Include="Content\global\fonts\octicons\octicons9f24.svg" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconic.min3f0d.css" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconic.svg" />
+    <Content Include="Content\global\fonts\themify\themify.min3f0d.css" />
+    <Content Include="Content\global\fonts\themify\themify9f24.svg" />
+    <Content Include="Content\global\fonts\weather-icons\weather-icons.min3f0d.css" />
+    <Content Include="Content\global\fonts\weather-icons\weathericons-regular-webfont.svg" />
+    <Content Include="Content\global\fonts\web-icons\web-icons.min3f0d.css" />
+    <Content Include="Content\global\fonts\web-icons\web-iconsd622.svg" />
+    <Content Include="Content\global\js\components\ace.min.js" />
+    <Content Include="Content\global\js\components\alertify-js.min.js" />
+    <Content Include="Content\global\js\components\animate-list.min.js" />
+    <Content Include="Content\global\js\components\animsition.min.js" />
+    <Content Include="Content\global\js\components\asbreadcrumbs.min.js" />
+    <Content Include="Content\global\js\components\ascolorpicker.min.js" />
+    <Content Include="Content\global\js\components\aspaginator.min.js" />
+    <Content Include="Content\global\js\components\aspieprogress.min.js" />
+    <Content Include="Content\global\js\components\asprogress.min.js" />
+    <Content Include="Content\global\js\components\asrange.min.js" />
+    <Content Include="Content\global\js\components\asscrollable.min.js" />
+    <Content Include="Content\global\js\components\asspinner.min.js" />
+    <Content Include="Content\global\js\components\bootbox.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-datepicker.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-maxlength.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-select.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-sweetalert.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-tagsinput.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-tokenfield.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-touchspin.min.js" />
+    <Content Include="Content\global\js\components\bootstrap-treeview.min.js" />
+    <Content Include="Content\global\js\components\buttons.min.js" />
+    <Content Include="Content\global\js\components\card.min.js" />
+    <Content Include="Content\global\js\components\clockpicker.min.js" />
+    <Content Include="Content\global\js\components\datatables.min.js" />
+    <Content Include="Content\global\js\components\datepair-js.min.js" />
+    <Content Include="Content\global\js\components\dropify.min.js" />
+    <Content Include="Content\global\js\components\editable-table.min.js" />
+    <Content Include="Content\global\js\components\filterable.min.js" />
+    <Content Include="Content\global\js\components\formatter-js.min.js" />
+    <Content Include="Content\global\js\components\gauge-js.min.js" />
+    <Content Include="Content\global\js\components\gmaps.min.js" />
+    <Content Include="Content\global\js\components\gridstack.min.js" />
+    <Content Include="Content\global\js\components\highlight-js.min.js" />
+    <Content Include="Content\global\js\components\html5sortable.min.js" />
+    <Content Include="Content\global\js\components\icheck.min.js" />
+    <Content Include="Content\global\js\components\input-group-file.min.js" />
+    <Content Include="Content\global\js\components\jquery-appear.min.js" />
+    <Content Include="Content\global\js\components\jquery-floatthead.min.js" />
+    <Content Include="Content\global\js\components\jquery-knob.min.js" />
+    <Content Include="Content\global\js\components\jquery-labelauty.min.js" />
+    <Content Include="Content\global\js\components\jquery-placeholder.min.js" />
+    <Content Include="Content\global\js\components\jquery-strength.min.js" />
+    <Content Include="Content\global\js\components\jquery-wizard.min.js" />
+    <Content Include="Content\global\js\components\jt-timepicker.min.js" />
+    <Content Include="Content\global\js\components\jvectormap.min.js" />
+    <Content Include="Content\global\js\components\ladda-bootstrap.min.js" />
+    <Content Include="Content\global\js\components\magnific-popup.min.js" />
+    <Content Include="Content\global\js\components\masonry.min.js" />
+    <Content Include="Content\global\js\components\matchheight.min.js" />
+    <Content Include="Content\global\js\components\material.min.js" />
+    <Content Include="Content\global\js\components\multi-select.min.js" />
+    <Content Include="Content\global\js\components\nestable.min.js" />
+    <Content Include="Content\global\js\components\nprogress.min.js" />
+    <Content Include="Content\global\js\components\owl-carousel.min.js" />
+    <Content Include="Content\global\js\components\panel.min.js" />
+    <Content Include="Content\global\js\components\peity.min.js" />
+    <Content Include="Content\global\js\components\plyr.min.js" />
+    <Content Include="Content\global\js\components\raty.min.js" />
+    <Content Include="Content\global\js\components\select2.min.js" />
+    <Content Include="Content\global\js\components\selectable.min.js" />
+    <Content Include="Content\global\js\components\slidepanel.min.js" />
+    <Content Include="Content\global\js\components\summernote.min.js" />
+    <Content Include="Content\global\js\components\switchery.min.js" />
+    <Content Include="Content\global\js\components\table.min.js" />
+    <Content Include="Content\global\js\components\tabs.min.js" />
+    <Content Include="Content\global\js\components\tasklist.min.js" />
+    <Content Include="Content\global\js\components\toastr.min.js" />
+    <Content Include="Content\global\js\components\toolbar.min.js" />
+    <Content Include="Content\global\js\components\webui-popover.min.js" />
+    <Content Include="Content\global\js\configs\config-colors.min.js" />
+    <Content Include="Content\global\js\core.min.js" />
+    <Content Include="Content\global\js\plugins\action-btn.min.js" />
+    <Content Include="Content\global\js\plugins\closeable-tabs.min.js" />
+    <Content Include="Content\global\js\plugins\responsive-tabs.min.js" />
+    <Content Include="Content\global\js\plugins\selectable.min.js" />
+    <Content Include="Content\global\js\plugins\sticky-header.min.js" />
+    <Content Include="Content\global\portraits\1.jpg" />
+    <Content Include="Content\global\portraits\10.jpg" />
+    <Content Include="Content\global\portraits\11.jpg" />
+    <Content Include="Content\global\portraits\12.jpg" />
+    <Content Include="Content\global\portraits\13.jpg" />
+    <Content Include="Content\global\portraits\14.jpg" />
+    <Content Include="Content\global\portraits\15.jpg" />
+    <Content Include="Content\global\portraits\16.jpg" />
+    <Content Include="Content\global\portraits\17.jpg" />
+    <Content Include="Content\global\portraits\18.jpg" />
+    <Content Include="Content\global\portraits\19.jpg" />
+    <Content Include="Content\global\portraits\2.jpg" />
+    <Content Include="Content\global\portraits\20.jpg" />
+    <Content Include="Content\global\portraits\3.jpg" />
+    <Content Include="Content\global\portraits\4.jpg" />
+    <Content Include="Content\global\portraits\5.jpg" />
+    <Content Include="Content\global\portraits\6.jpg" />
+    <Content Include="Content\global\portraits\7.jpg" />
+    <Content Include="Content\global\portraits\8.jpg" />
+    <Content Include="Content\global\portraits\9.jpg" />
+    <Content Include="Content\global\portraits\my.jpg" />
+    <Content Include="Content\global\vendor\ace\ace.js" />
+    <Content Include="Content\global\vendor\ace\ace.min3f0d.css" />
+    <Content Include="Content\global\vendor\alertify-js\alertify.js" />
+    <Content Include="Content\global\vendor\alertify-js\alertify.min3f0d.css" />
+    <Content Include="Content\global\vendor\animsition\animsition.min.js" />
+    <Content Include="Content\global\vendor\animsition\animsition.min3f0d.css" />
+    <Content Include="Content\global\vendor\asbreadcrumbs\jquery-asBreadcrumbs.min.js" />
+    <Content Include="Content\global\vendor\ascolorpicker\asColorPicker.min3f0d.css" />
+    <Content Include="Content\global\vendor\ascolorpicker\images\alpha.png" />
+    <Content Include="Content\global\vendor\ascolorpicker\images\hue.png" />
+    <Content Include="Content\global\vendor\ascolorpicker\images\saturation.png" />
+    <Content Include="Content\global\vendor\ascolorpicker\images\transparent.png" />
+    <Content Include="Content\global\vendor\ascolorpicker\jquery-asColorPicker.min.js" />
+    <Content Include="Content\global\vendor\ascolor\jquery-asColor.min.js" />
+    <Content Include="Content\global\vendor\asgradient\jquery-asGradient.min.js" />
+    <Content Include="Content\global\vendor\ashoverscroll\jquery-asHoverScroll.min.js" />
+    <Content Include="Content\global\vendor\aspaginator\jquery.asPaginator.min.js" />
+    <Content Include="Content\global\vendor\aspieprogress\asPieProgress.min3f0d.css" />
+    <Content Include="Content\global\vendor\aspieprogress\jquery-asPieProgress.min.js" />
+    <Content Include="Content\global\vendor\asprogress\jquery-asProgress.min.js" />
+    <Content Include="Content\global\vendor\asrange\asRange.min3f0d.css" />
+    <Content Include="Content\global\vendor\asrange\jquery-asRange.min.js" />
+    <Content Include="Content\global\vendor\asscrollable\asScrollable.min3f0d.css" />
+    <Content Include="Content\global\vendor\asscrollable\jquery.asScrollable.all.min.js" />
+    <Content Include="Content\global\vendor\asscroll\jquery-asScroll.min.js" />
+    <Content Include="Content\global\vendor\asspinner\asSpinner.min3f0d.css" />
+    <Content Include="Content\global\vendor\asspinner\jquery-asSpinner.min.js" />
+    <Content Include="Content\global\vendor\autosize\autosize.min.js" />
+    <Content Include="Content\global\vendor\blueimp-canvas-to-blob\canvas-to-blob.min.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\file-type.html" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload-audio.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload-image.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload-process.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload-ui.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload-validate.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload-video.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload.js" />
+    <Content Include="Content\global\vendor\blueimp-file-upload\jquery.fileupload.min3f0d.css" />
+    <Content Include="Content\global\vendor\blueimp-load-image\load-image.all.min.js" />
+    <Content Include="Content\global\vendor\blueimp-tmpl\tmpl.min.js" />
+    <Content Include="Content\global\vendor\bootbox\bootbox.js" />
+    <Content Include="Content\global\vendor\bootstrap-contextmenu\bootstrap-contextmenu.js" />
+    <Content Include="Content\global\vendor\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-datepicker\bootstrap-datepicker.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-markdown\bootstrap-markdown.js" />
+    <Content Include="Content\global\vendor\bootstrap-markdown\bootstrap-markdown.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-maxlength\bootstrap-maxlength.js" />
+    <Content Include="Content\global\vendor\bootstrap-maxlength\bootstrap-maxlength.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-select\bootstrap-select.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-sweetalert\sweet-alert.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-sweetalert\sweet-alert.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-table\bootstrap-table.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-table\bootstrap-table.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-table\extensions\mobile\bootstrap-table-mobile.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-tagsinput\bootstrap-tagsinput.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-tagsinput\bootstrap-tagsinput.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-tokenfield\bootstrap-tokenfield.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-tokenfield\bootstrap-tokenfield.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-touchspin\bootstrap-touchspin.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap-touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-treeview\bootstrap-treeview.min.js" />
+    <Content Include="Content\global\vendor\bootstrap-treeview\bootstrap-treeview.min3f0d.css" />
+    <Content Include="Content\global\vendor\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\global\vendor\breakpoints\breakpoints.min.js" />
+    <Content Include="Content\global\vendor\c3\c3.min.js" />
+    <Content Include="Content\global\vendor\c3\c3.min3f0d.css" />
+    <Content Include="Content\global\vendor\card\card.min3f0d.css" />
+    <Content Include="Content\global\vendor\card\jquery.card.js" />
+    <Content Include="Content\global\vendor\chart-js\Chart.min.js" />
+    <Content Include="Content\global\vendor\chartist-js\chartist.min.js" />
+    <Content Include="Content\global\vendor\chartist-js\chartist.min3f0d.css" />
+    <Content Include="Content\global\vendor\chartist-plugin-tooltip\chartist-plugin-tooltip.min.js" />
+    <Content Include="Content\global\vendor\chartist-plugin-tooltip\chartist-plugin-tooltip.min3f0d.css" />
+    <Content Include="Content\global\vendor\clockpicker\bootstrap-clockpicker.min.js" />
+    <Content Include="Content\global\vendor\clockpicker\clockpicker.min3f0d.css" />
+    <Content Include="Content\global\vendor\codemirror\addon\scroll\simplescrollbars.js" />
+    <Content Include="Content\global\vendor\codemirror\addon\scroll\simplescrollbars3f0d.css" />
+    <Content Include="Content\global\vendor\codemirror\codemirror.js" />
+    <Content Include="Content\global\vendor\codemirror\codemirror.min3f0d.css" />
+    <Content Include="Content\global\vendor\codemirror\mode\css\css.js" />
+    <Content Include="Content\global\vendor\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Content\global\vendor\codemirror\mode\xml\xml.js" />
+    <Content Include="Content\global\vendor\codemirror\theme\eclipse3f0d.css" />
+    <Content Include="Content\global\vendor\cropper\cropper.min.js" />
+    <Content Include="Content\global\vendor\cropper\cropper.min3f0d.css" />
+    <Content Include="Content\global\vendor\d3\d3.min.js" />
+    <Content Include="Content\global\vendor\datatables-bootstrap\dataTables.bootstrap.min.js" />
+    <Content Include="Content\global\vendor\datatables-bootstrap\dataTables.bootstrap.min3f0d.css" />
+    <Content Include="Content\global\vendor\datatables-fixedheader\dataTables.fixedHeader.js" />
+    <Content Include="Content\global\vendor\datatables-fixedheader\dataTables.fixedHeader.min3f0d.css" />
+    <Content Include="Content\global\vendor\datatables-responsive\dataTables.responsive.js" />
+    <Content Include="Content\global\vendor\datatables-responsive\dataTables.responsive.min3f0d.css" />
+    <Content Include="Content\global\vendor\datatables-tabletools\dataTables.tableTools.js" />
+    <Content Include="Content\global\vendor\datatables\jquery.dataTables.min.js" />
+    <Content Include="Content\global\vendor\datepair-js\datepair.min.js" />
+    <Content Include="Content\global\vendor\datepair-js\jquery.datepair.min.js" />
+    <Content Include="Content\global\vendor\draggabilly\draggabilly.pkgd.min.js" />
+    <Content Include="Content\global\vendor\dropify\dropify.min.js" />
+    <Content Include="Content\global\vendor\dropify\dropify.min3f0d.css" />
+    <Content Include="Content\global\vendor\editable-table\editable-table.min3f0d.css" />
+    <Content Include="Content\global\vendor\editable-table\mindmup-editabletable.js" />
+    <Content Include="Content\global\vendor\editable-table\numeric-input-example.js" />
+    <Content Include="Content\global\vendor\filament-tablesaw\tablesaw-init.js" />
+    <Content Include="Content\global\vendor\filament-tablesaw\tablesaw.js" />
+    <Content Include="Content\global\vendor\filament-tablesaw\tablesaw.min3f0d.css" />
+    <Content Include="Content\global\vendor\flag-icon-css\flag-icon.min3f0d.css" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ad.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ae.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\af.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ag.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ai.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\al.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\am.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ao.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\aq.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ar.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\as.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\at.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\au.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\aw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ax.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\az.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ba.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bb.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bd.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\be.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bh.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bi.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bj.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bo.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bq.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\br.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bs.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bv.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\by.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\bz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ca.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cd.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ch.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ci.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ck.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\co.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cv.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cx.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cy.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\cz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\de.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\dj.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\dk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\dm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\do.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\dz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ec.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ee.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\eg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\eh.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\er.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\es.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\et.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\fi.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\fj.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\fk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\fm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\fo.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\fr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ga.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gb.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gd.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ge.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gh.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gi.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gp.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gq.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gs.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\gy.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\hk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\hm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\hn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\hr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ht.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\hu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\id.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ie.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\il.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\im.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\in.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\io.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\iq.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ir.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\is.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\it.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\je.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\jm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\jo.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\jp.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ke.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kh.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ki.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\km.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kp.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ky.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\kz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\la.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lb.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\li.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ls.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\lv.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ly.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ma.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\md.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\me.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mh.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ml.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mo.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mp.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mq.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ms.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mv.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mx.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\my.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\mz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\na.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\nc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ne.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\nf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ng.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ni.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\nl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\no.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\np.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\nr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\nu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\nz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\om.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pa.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pe.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ph.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ps.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\pw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\py.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\qa.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\re.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ro.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\rs.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ru.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\rw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sa.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sb.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sd.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\se.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sh.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\si.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sj.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\so.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ss.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\st.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sv.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sx.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sy.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\sz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\td.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\th.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tj.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tk.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tl.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\to.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tr.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tv.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tw.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\tz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ua.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ug.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\um.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\us.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\uy.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\uz.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\va.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\vc.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ve.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\vg.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\vi.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\vn.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\vu.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\wf.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ws.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\ye.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\yt.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\za.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\zm.svg" />
+    <Content Include="Content\global\vendor\flag-icon-css\flags\zw.svg" />
+    <Content Include="Content\global\vendor\flot\jquery.flot.js" />
+    <Content Include="Content\global\vendor\flot\jquery.flot.pie.js" />
+    <Content Include="Content\global\vendor\flot\jquery.flot.resize.js" />
+    <Content Include="Content\global\vendor\flot\jquery.flot.selection.js" />
+    <Content Include="Content\global\vendor\flot\jquery.flot.stack.js" />
+    <Content Include="Content\global\vendor\flot\jquery.flot.time.js" />
+    <Content Include="Content\global\vendor\footable\footable.all.min.js" />
+    <Content Include="Content\global\vendor\footable\footable.min3f0d.css" />
+    <Content Include="Content\global\vendor\formatter-js\jquery.formatter.min.js" />
+    <Content Include="Content\global\vendor\formvalidation\formValidation.min.js" />
+    <Content Include="Content\global\vendor\formvalidation\formValidation.min3f0d.css" />
+    <Content Include="Content\global\vendor\formvalidation\framework\bootstrap.min.js" />
+    <Content Include="Content\global\vendor\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\global\vendor\fullcalendar\fullcalendar.min3f0d.css" />
+    <Content Include="Content\global\vendor\gauge-js\gauge.min.js" />
+    <Content Include="Content\global\vendor\gauge-js\gauge.min3f0d.css" />
+    <Content Include="Content\global\vendor\gmaps\gmaps.js" />
+    <Content Include="Content\global\vendor\google\analytics.js" />
+    <Content Include="Content\global\vendor\gridstack\gridstack.min.js" />
+    <Content Include="Content\global\vendor\gridstack\gridstack.min3f0d.css" />
+    <Content Include="Content\global\vendor\highlight\highlight.min3f0d.css" />
+    <Content Include="Content\global\vendor\highlight\highlight.pack.js" />
+    <Content Include="Content\global\vendor\highlight\styles\default3f0d.css" />
+    <Content Include="Content\global\vendor\highlight\styles\github-gist3f0d.css" />
+    <Content Include="Content\global\vendor\html5sortable\html.sortable.min.js" />
+    <Content Include="Content\global\vendor\html5sortable\sortable.min3f0d.css" />
+    <Content Include="Content\global\vendor\icheck\icheck.min.js" />
+    <Content Include="Content\global\vendor\icheck\icheck.min3f0d.css" />
+    <Content Include="Content\global\vendor\icheck\images\aero%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\aero.png" />
+    <Content Include="Content\global\vendor\icheck\images\blue%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\blue.png" />
+    <Content Include="Content\global\vendor\icheck\images\flat%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\flat.png" />
+    <Content Include="Content\global\vendor\icheck\images\green%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\green.png" />
+    <Content Include="Content\global\vendor\icheck\images\grey%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\grey.png" />
+    <Content Include="Content\global\vendor\icheck\images\orange%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\orange.png" />
+    <Content Include="Content\global\vendor\icheck\images\pink%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\pink.png" />
+    <Content Include="Content\global\vendor\icheck\images\purple%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\purple.png" />
+    <Content Include="Content\global\vendor\icheck\images\red%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\red.png" />
+    <Content Include="Content\global\vendor\icheck\images\yellow%402x.png" />
+    <Content Include="Content\global\vendor\icheck\images\yellow.png" />
+    <Content Include="Content\global\vendor\intro-js\intro.min.js" />
+    <Content Include="Content\global\vendor\intro-js\introjs.min3f0d.css" />
+    <Content Include="Content\global\vendor\isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\global\vendor\jquery-appear\jquery.appear.js" />
+    <Content Include="Content\global\vendor\jquery-floatthead\jquery.floatThead.min.js" />
+    <Content Include="Content\global\vendor\jquery-floatthead\jquery.floatThead.min3f0d.css" />
+    <Content Include="Content\global\vendor\jquery-knob\jquery.knob.min.js" />
+    <Content Include="Content\global\vendor\jquery-labelauty\images\input-checked.png" />
+    <Content Include="Content\global\vendor\jquery-labelauty\images\input-unchecked.png" />
+    <Content Include="Content\global\vendor\jquery-labelauty\jquery-labelauty.js" />
+    <Content Include="Content\global\vendor\jquery-labelauty\jquery-labelauty.min3f0d.css" />
+    <Content Include="Content\global\vendor\jquery-placeholder\jquery.placeholder.min.js" />
+    <Content Include="Content\global\vendor\jquery-selective\jquery-selective.min.js" />
+    <Content Include="Content\global\vendor\jquery-selective\jquery-selective.min3f0d.css" />
+    <Content Include="Content\global\vendor\jquery-strength\jquery-strength.min.js" />
+    <Content Include="Content\global\vendor\jquery-strength\jquery-strength.min3f0d.css" />
+    <Content Include="Content\global\vendor\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Content\global\vendor\jquery-wizard\jquery-wizard.min.js" />
+    <Content Include="Content\global\vendor\jquery-wizard\jquery-wizard.min3f0d.css" />
+    <Content Include="Content\global\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\global\vendor\jsgrid\jsgrid.min.js" />
+    <Content Include="Content\global\vendor\jsgrid\jsgrid.min3f0d.css" />
+    <Content Include="Content\global\vendor\jt-timepicker\jquery-timepicker.min3f0d.css" />
+    <Content Include="Content\global\vendor\jt-timepicker\jquery.timepicker.min.js" />
+    <Content Include="Content\global\vendor\jvectormap\jquery-jvectormap.min3f0d.css" />
+    <Content Include="Content\global\vendor\jvectormap\jquery.jvectormap.min.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-au-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-ca-lcc-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-de-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-fr-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-us-merc-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-us-ny-newyork-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\global\vendor\jvectormap\maps\jquery-jvectormap-za-mill-en.js" />
+    <Content Include="Content\global\vendor\ladda-bootstrap\ladda.min.js" />
+    <Content Include="Content\global\vendor\ladda-bootstrap\ladda.min3f0d.css" />
+    <Content Include="Content\global\vendor\ladda-bootstrap\spin.min.js" />
+    <Content Include="Content\global\vendor\layout-grid\layout-grid.min.js" />
+    <Content Include="Content\global\vendor\layout-grid\layout-grid.min3f0d.css" />
+    <Content Include="Content\global\vendor\lodash\lodash.min.js" />
+    <Content Include="Content\global\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Content\global\vendor\magnific-popup\magnific-popup.min3f0d.css" />
+    <Content Include="Content\global\vendor\mapbox.js\images\icons-000000%402x.png" />
+    <Content Include="Content\global\vendor\mapbox.js\images\icons-ffffff%402x.png" />
+    <Content Include="Content\global\vendor\mapbox.js\mapbox.js" />
+    <Content Include="Content\global\vendor\mapbox.js\mapbox.min3f0d.css" />
+    <Content Include="Content\global\vendor\mapbox.js\plugins\leaflet.markercluster.js" />
+    <Content Include="Content\global\vendor\marked\marked.min.js" />
+    <Content Include="Content\global\vendor\masonry\masonry.pkgd.min.js" />
+    <Content Include="Content\global\vendor\matchheight\jquery.matchHeight-min.js" />
+    <Content Include="Content\global\vendor\modernizr\modernizr.min.js" />
+    <Content Include="Content\global\vendor\moment\moment.min.js" />
+    <Content Include="Content\global\vendor\morris-js\morris.min.js" />
+    <Content Include="Content\global\vendor\morris-js\morris.min3f0d.css" />
+    <Content Include="Content\global\vendor\mousewheel\jquery.mousewheel.min.js" />
+    <Content Include="Content\global\vendor\multi-select\jquery.multi-select.js" />
+    <Content Include="Content\global\vendor\multi-select\multi-select.min3f0d.css" />
+    <Content Include="Content\global\vendor\nestable\jquery.nestable.js" />
+    <Content Include="Content\global\vendor\nestable\nestable.min3f0d.css" />
+    <Content Include="Content\global\vendor\nprogress\nprogress.js" />
+    <Content Include="Content\global\vendor\nprogress\nprogress.min3f0d.css" />
+    <Content Include="Content\global\vendor\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Content\global\vendor\owl-carousel\owl.carousel.min3f0d.css" />
+    <Content Include="Content\global\vendor\owl-carousel\owl.video.play.html" />
+    <Content Include="Content\global\vendor\peity\jquery.peity.min.js" />
+    <Content Include="Content\global\vendor\plyr\plyr.js" />
+    <Content Include="Content\global\vendor\plyr\plyr.min3f0d.css" />
+    <Content Include="Content\global\vendor\raphael\raphael-min.js" />
+    <Content Include="Content\global\vendor\raty\jquery.raty.js" />
+    <Content Include="Content\global\vendor\rickshaw\rickshaw.min.js" />
+    <Content Include="Content\global\vendor\rickshaw\rickshaw.min3f0d.css" />
+    <Content Include="Content\global\vendor\screenfull\screenfull.min.js" />
+    <Content Include="Content\global\vendor\select2\select2.full.min.js" />
+    <Content Include="Content\global\vendor\select2\select2.min.js" />
+    <Content Include="Content\global\vendor\select2\select2.min3f0d.css" />
+    <Content Include="Content\global\vendor\skycons\skycons.js" />
+    <Content Include="Content\global\vendor\slick-carousel\images\ajax-loader.gif" />
+    <Content Include="Content\global\vendor\slick-carousel\slick.min.js" />
+    <Content Include="Content\global\vendor\slick-carousel\slick.min3f0d.css" />
+    <Content Include="Content\global\vendor\slidepanel\jquery-slidePanel.min.js" />
+    <Content Include="Content\global\vendor\slidepanel\slidePanel.min3f0d.css" />
+    <Content Include="Content\global\vendor\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Content\global\vendor\sparkline\sparkline.min3f0d.css" />
+    <Content Include="Content\global\vendor\summernote\summernote.min.js" />
+    <Content Include="Content\global\vendor\summernote\summernote.min3f0d.css" />
+    <Content Include="Content\global\vendor\switchery\switchery.min.js" />
+    <Content Include="Content\global\vendor\switchery\switchery.min3f0d.css" />
+    <Content Include="Content\global\vendor\tasklist\tasklist.min3f0d.css" />
+    <Content Include="Content\global\vendor\to-markdown\to-markdown.js" />
+    <Content Include="Content\global\vendor\toastr\toastr.min.js" />
+    <Content Include="Content\global\vendor\toastr\toastr.min3f0d.css" />
+    <Content Include="Content\global\vendor\toolbar\jquery.toolbar.min.js" />
+    <Content Include="Content\global\vendor\toolbar\toolbar.min3f0d.css" />
+    <Content Include="Content\global\vendor\typeahead-js\bloodhound.min.js" />
+    <Content Include="Content\global\vendor\typeahead-js\typeahead.jquery.min.js" />
+    <Content Include="Content\global\vendor\typeahead-js\typeahead.min3f0d.css" />
+    <Content Include="Content\global\vendor\webui-popover\jquery.webui-popover.min.js" />
+    <Content Include="Content\global\vendor\webui-popover\webui-popover.min3f0d.css" />
+    <Content Include="Content\global\vendor\x-editable\address.js" />
+    <Content Include="Content\global\vendor\x-editable\address.min3f0d.css" />
+    <Content Include="Content\global\vendor\x-editable\bootstrap-editable.min.js" />
+    <Content Include="Content\global\vendor\x-editable\images\clear.png" />
+    <Content Include="Content\global\vendor\x-editable\images\loading.gif" />
+    <Content Include="Content\global\vendor\x-editable\x-editable.min3f0d.css" />
+    <Content Include="Content\select2-bootstrap.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\common.scss" />
+    <Content Include="Content\DataTables\Buttons-1.4.2\css\mixins.scss" />
+    <Content Include="Content\global\fonts\7-stroke\Pe-icon-7-strokebb1d.eot" />
+    <Content Include="Content\global\fonts\7-stroke\Pe-icon-7-strokebb1d.ttf" />
+    <Content Include="Content\global\fonts\7-stroke\Pe-icon-7-strokebb1d.woff" />
+    <Content Include="Content\global\fonts\7-stroke\Pe-icon-7-stroked41d.eot" />
+    <Content Include="Content\global\fonts\brand-icons\brand-iconsa29e.eot" />
+    <Content Include="Content\global\fonts\brand-icons\brand-iconsa29e.ttf" />
+    <Content Include="Content\global\fonts\brand-icons\brand-iconsa29e.woff" />
+    <Content Include="Content\global\fonts\brand-icons\brand-iconsa29e.woff2" />
+    <Content Include="Content\global\fonts\brand-icons\brand-iconsd41d.eot" />
+    <Content Include="Content\global\fonts\font-awesome\fontawesome-webfont914c.eot" />
+    <Content Include="Content\global\fonts\font-awesome\fontawesome-webfont914c.ttf" />
+    <Content Include="Content\global\fonts\font-awesome\fontawesome-webfont914c.woff" />
+    <Content Include="Content\global\fonts\font-awesome\fontawesome-webfont914c.woff2" />
+    <Content Include="Content\global\fonts\font-awesome\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\global\fonts\glyphicons\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\global\fonts\ionicons\ionicons790f.eot" />
+    <Content Include="Content\global\fonts\ionicons\ionicons790f.ttf" />
+    <Content Include="Content\global\fonts\ionicons\ionicons790f.woff" />
+    <Content Include="Content\global\fonts\material-design\Material-Design-Iconic-Fontd1f1.ttf" />
+    <Content Include="Content\global\fonts\material-design\Material-Design-Iconic-Fontd1f1.woff" />
+    <Content Include="Content\global\fonts\material-design\Material-Design-Iconic-Fontd1f1.woff2" />
+    <Content Include="Content\global\fonts\mfglabs\mfglabsiconset-webfont.eot" />
+    <Content Include="Content\global\fonts\mfglabs\mfglabsiconset-webfont.ttf" />
+    <Content Include="Content\global\fonts\mfglabs\mfglabsiconset-webfont.woff" />
+    <Content Include="Content\global\fonts\mfglabs\mfglabsiconset-webfontd41d.eot" />
+    <Content Include="Content\global\fonts\octicons\octicons9f24.eot" />
+    <Content Include="Content\global\fonts\octicons\octicons9f24.ttf" />
+    <Content Include="Content\global\fonts\octicons\octicons9f24.woff" />
+    <Content Include="Content\global\fonts\octicons\octiconsd41d.eot" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconic.eot" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconic.otf" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconic.ttf" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconic.woff" />
+    <Content Include="Content\global\fonts\open-iconic\open-iconicd41d.eot" />
+    <Content Include="Content\global\fonts\themify\themify9f24.eot" />
+    <Content Include="Content\global\fonts\themify\themify9f24.ttf" />
+    <Content Include="Content\global\fonts\themify\themify9f24.woff" />
+    <Content Include="Content\global\fonts\themify\themifyd41d.eot" />
+    <Content Include="Content\global\fonts\weather-icons\weathericons-regular-webfont.eot" />
+    <Content Include="Content\global\fonts\weather-icons\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\global\fonts\weather-icons\weathericons-regular-webfont.woff" />
+    <Content Include="Content\global\fonts\weather-icons\weathericons-regular-webfontd41d.eot" />
+    <Content Include="Content\global\fonts\web-icons\web-iconsd41d.eot" />
+    <Content Include="Content\global\fonts\web-icons\web-iconsd622.eot" />
+    <Content Include="Content\global\fonts\web-icons\web-iconsd622.ttf" />
+    <Content Include="Content\global\fonts\web-icons\web-iconsd622.woff" />
+    <Content Include="Content\global\fonts\web-icons\web-iconsd622.woff2" />
+    <Content Include="Content\select2-bootstrap.scss" />
+    <Content Include="Content\select2-bootstrap.less" />
+    <Content Include="Content\select2-bootstrap-build.scss" />
+    <Content Include="Content\select2-bootstrap-build.less" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\i18n\af.js" />
+    <Content Include="Scripts\i18n\ar.js" />
+    <Content Include="Scripts\i18n\az.js" />
+    <Content Include="Scripts\i18n\bg.js" />
+    <Content Include="Scripts\i18n\bs.js" />
+    <Content Include="Scripts\i18n\ca.js" />
+    <Content Include="Scripts\i18n\cs.js" />
+    <Content Include="Scripts\i18n\da.js" />
+    <Content Include="Scripts\i18n\de.js" />
+    <Content Include="Scripts\i18n\dsb.js" />
+    <Content Include="Scripts\i18n\el.js" />
+    <Content Include="Scripts\i18n\en.js" />
+    <Content Include="Scripts\i18n\es.js" />
+    <Content Include="Scripts\i18n\et.js" />
+    <Content Include="Scripts\i18n\eu.js" />
+    <Content Include="Scripts\i18n\fa.js" />
+    <Content Include="Scripts\i18n\fi.js" />
+    <Content Include="Scripts\i18n\fr.js" />
+    <Content Include="Scripts\i18n\gl.js" />
+    <Content Include="Scripts\i18n\he.js" />
+    <Content Include="Scripts\i18n\hi.js" />
+    <Content Include="Scripts\i18n\hr.js" />
+    <Content Include="Scripts\i18n\hsb.js" />
+    <Content Include="Scripts\i18n\hu.js" />
+    <Content Include="Scripts\i18n\hy.js" />
+    <Content Include="Scripts\i18n\id.js" />
+    <Content Include="Scripts\i18n\is.js" />
+    <Content Include="Scripts\i18n\it.js" />
+    <Content Include="Scripts\i18n\ja.js" />
+    <Content Include="Scripts\i18n\km.js" />
+    <Content Include="Scripts\i18n\ko.js" />
+    <Content Include="Scripts\i18n\lt.js" />
+    <Content Include="Scripts\i18n\lv.js" />
+    <Content Include="Scripts\i18n\mk.js" />
+    <Content Include="Scripts\i18n\ms.js" />
+    <Content Include="Scripts\i18n\nb.js" />
+    <Content Include="Scripts\i18n\nl.js" />
+    <Content Include="Scripts\i18n\pl.js" />
+    <Content Include="Scripts\i18n\ps.js" />
+    <Content Include="Scripts\i18n\pt-BR.js" />
+    <Content Include="Scripts\i18n\pt.js" />
+    <Content Include="Scripts\i18n\ro.js" />
+    <Content Include="Scripts\i18n\ru.js" />
+    <Content Include="Scripts\i18n\sk.js" />
+    <Content Include="Scripts\i18n\sl.js" />
+    <Content Include="Scripts\i18n\sr-Cyrl.js" />
+    <Content Include="Scripts\i18n\sr.js" />
+    <Content Include="Scripts\i18n\sv.js" />
+    <Content Include="Scripts\i18n\th.js" />
+    <Content Include="Scripts\i18n\tr.js" />
+    <Content Include="Scripts\i18n\uk.js" />
+    <Content Include="Scripts\i18n\vi.js" />
+    <Content Include="Scripts\i18n\zh-CN.js" />
+    <Content Include="Scripts\i18n\zh-TW.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\jquery.form.min.js.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MarkdownDeep License.txt" />
+    <Content Include="Scripts\MarkdownDeep Quick Reference.txt" />
+    <Content Include="Scripts\MarkdownDeepLib.min.js" />
+    <Content Include="Scripts\mdd_ajax_loader.gif" />
+    <Content Include="Scripts\mdd_gripper.png" />
+    <Content Include="Scripts\mdd_help.htm" />
+    <Content Include="Scripts\mdd_modal_background.png" />
+    <Content Include="Scripts\mdd_styles.css" />
+    <Content Include="Scripts\mdd_toolbar.png" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\Site\ImageUpload.js" />
+    <Content Include="Scripts\Site\main.js" />
+    <Content Include="Scripts\Site\site-controls.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\toastrOptions.js" />
+    <Content Include="Scripts\validation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CascadeDropDown.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DropDown.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FileUpload.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\HttpPostedFileBase.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Markdown.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ModalButton.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MonthYear.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Multiline.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Photo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Single.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Text.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TextSearch.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TimeSpan.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_FieldLayout.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Shared\_ModalScripts.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\LeaveApplication\Index.cshtml" />
+    <Content Include="Views\LeaveApplication\Create.cshtml" />
+    <Content Include="Views\LeaveReimburse\Index.cshtml" />
+    <Content Include="Views\LeaveReimburse\Create.cshtml" />
+    <Content Include="Views\LeaveReimburse\LeaveGrid.cshtml" />
+    <Content Include="Views\Imprest\Create.cshtml" />
+    <Content Include="Views\Imprest\Index.cshtml" />
+    <Content Include="Views\Imprest\_Lines.cshtml" />
+    <Content Include="Views\Imprest\_AddLine.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Client Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{1feb620c-329f-42c7-865a-9ecf2bc91921}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{D804D7FE-660C-4702-AED1-B0ACBADD3E7B}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infra\Infra.csproj">
+      <Project>{D50A23AC-34DD-4D77-BC90-4A11835CAC38}</Project>
+      <Name>Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{a174565b-a793-4d68-95f4-5a2ed04c54e6}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59082</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59082/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

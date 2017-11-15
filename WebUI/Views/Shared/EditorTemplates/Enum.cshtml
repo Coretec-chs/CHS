@@ -1,0 +1,9 @@
+@using WebUI.Utility
+@model object
+
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    @Html.EnumDropDownListFor(m => m, new { @class = "form-control input-sm" })
+    @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+</div>

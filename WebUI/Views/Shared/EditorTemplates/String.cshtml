@@ -1,0 +1,52 @@
+@using WebUI.Utility
+@model  object
+
+@{
+    string displayText = string.Empty;
+    var htmlAttributes = new RouteValueDictionary();
+
+    if (Model != null)
+    {
+        displayText = Model.ToString();
+    }
+
+
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "form-control input-sm " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control input-sm");
+    }
+    if (ViewBag.@type != null)
+    {
+        htmlAttributes.Add("type", ViewBag.@type);
+    }
+    if (ViewBag.placeholder != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+    if (ViewBag.@readonly != null && ViewBag.@readonly !=string.Empty)
+    {
+        htmlAttributes.Add("readonly", ViewBag.@readonly);
+    }
+
+    if (ViewBag.disabled != null && ViewBag.disabled != string.Empty)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+    htmlAttributes.Add("autocomplete", "off");
+
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        @Html.TextBox("", displayText,
+                // "",
+                //ViewData.TemplateInfo.FormattedModelValue,
+            htmlAttributes)
+        @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+    </div>
+</div>

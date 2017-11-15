@@ -1,0 +1,46 @@
+@using WebUI.Utility
+@model long?
+
+@{
+    var htmlAttributes = new RouteValueDictionary();
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "form-control input-sm " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control input-sm");
+    }
+    if (ViewBag.@type != null)
+    {
+        htmlAttributes.Add("type", ViewBag.@type);
+    }
+    if (ViewBag.placeholder != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+    if (ViewBag.@readonly != null)
+    {
+        htmlAttributes.Add("readonly", ViewBag.@readonly);
+    }
+
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " error has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        <div class="input-group">
+            @Html.TextBox(
+            "",
+            ViewData.TemplateInfo.FormattedModelValue,
+            htmlAttributes)
+            @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+            <span class="input-group-btn">
+                <a class="btn btn-primary btn-sm" id=@ViewBag.btnid>
+                    <i class="icon wb-search" aria-hidden="true"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+    @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+</div>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<HRLeaveReimbursmentCard>
+@{
+    TempData["Module"] = "Leave";
+    TempData["MenuTag"] = "LeaveReimburse";
+    ViewBag.Title = "Leave Reimbursement List";
+}
+<p>
+    @Html.NoEncodeActionLink("<i class='icon wb-file text-active'></i><span class='text-active'>Apply for Leave Reinbursment</span>", "Apply for Leave Reinbursment", "Create", null, null, new { @class = "btn btn-primary btn-sm", data_load = "" })
+</p>
+<table class="table table-hover table-striped table-bordered dt-responsive nowrap datagrid" style="width:100%">
+    <thead>
+        <tr>
+            <th>Application No.</th>
+            <th>Date</th>
+            <th>Leave Code</th>
+            <th>Leave Type</th>
+            <th>Days to Reimburse</th>
+            <th>Status</th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Application No.</th>
+            <th>Date</th>
+            <th>Leave Code</th>
+            <th>Leave Type</th>
+            <th>Days to Reimburse</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.NoEncodeActionLink(item.Application_Code.ToString(), "Details", "edit", null, new { id = item.Application_Code })
+                </td>
+                <td>
+                    @Html.ValueFor(modelItem => item.Application_Date, "{0:dd MMM yyyy}")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leave_Application_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leave_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Days_to_Reimburse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td class="text-center" style="width:25px">
+                    @Html.NoEncodeActionLink("<i class='icon wb-edit'></i><span class='site-menu-title'> &nbspDetails </span>", "Details", "Edit", null, new { id = item.Application_Code }, new { @class = "btn btn-icon btn-primary btn-outline btn-xs" })
+                    @if (item.Status == "New")
+                    {
+                        <span style="padding-right:5px">@Html.NoEncodeActionLink("<i class='icon wb-check'></i><span class='site-menu-title'> &nbspSend for Approval </span>", "Send for Approval", "Submit", null, new { id = item.Application_Code }, new { @class = "btn btn-icon btn-success btn-outline btn-xs" })</span>
+                    }
+                    else
+                    {
+                        <span style="padding-right:5px">@Html.NoEncodeActionLink("<i class='icon wb-close'></i><span class='site-menu-title'> &nbspCancel Request Approval </span>", "Cancel Request Approval", "CancelRequestApproval", null, new { id = item.Application_Code }, new { @class = "btn btn-icon btn-danger btn-outline btn-xs disabled" })</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

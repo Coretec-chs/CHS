@@ -1,0 +1,9 @@
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\bin\Debug\Infra.dll
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\bin\Debug\Infra.pdb
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\bin\Debug\Castle.Core.dll
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\bin\Debug\Castle.Windsor.dll
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\bin\Debug\Castle.Core.xml
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\bin\Debug\Castle.Windsor.xml
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\obj\Debug\Infra.csprojResolveAssemblyReference.cache
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\obj\Debug\Infra.dll
+C:\Coretech\Projects\CHSPortal\NAVPortal\Infra\obj\Debug\Infra.pdb

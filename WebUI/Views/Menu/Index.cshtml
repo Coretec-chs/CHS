@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AspNetMenus>
+
+
+<div id="menu">
+    <ul class="site-menu">
+        <li class="site-menu-category">NAVIGATOR</li>
+        @foreach (var item in Model.Where(o => o.MenuLevel == 1).OrderBy(o => o.MenuOrder))
+        {
+
+            if (item.ExpandOnly)
+            {
+                <li class="site-menu-item has-sub @Html.MenuOpen(item.Controller)">
+                    <a href="javascript:void(0)">
+                        <i class="site-menu-icon @item.MenuIcon" aria-hidden="true"></i>                        
+                        <span class="site-menu-title">@item.MenuName</span>
+                        <span class="site-menu-arrow"></span>
+                    </a>
+                    <ul class="site-menu-sub">
+                        @foreach (var childItem in Model.Where(o => o.ParentId == item.Code).OrderBy(o => o.MenuOrder))
+                        {
+                            <li class="site-menu-item">
+                                @Html.MenuItem("<span class='site-menu-title'>" + @childItem.MenuName + " </span>",
+                                  @childItem.MenuTitle, @childItem.Action, @childItem.Controller,
+                                  new { @class = "site-menu-item" }, null, new { @class = "animsition-link" })
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                @Html.MenuItem(
+                "<i class='site-menu-icon " + @item.MenuIcon + "'></i><span class='site-menu-title'>&nbsp" + @item.MenuName + "</span>",
+                @item.MenuTitle, @item.Action, @item.Controller, new { @class = "site-menu-item" }, null, null, @item.ExpandOnly)
+            }
+        }
+    </ul>
+
+</div>
+

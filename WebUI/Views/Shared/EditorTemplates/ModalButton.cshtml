@@ -1,0 +1,59 @@
+@using WebUI.Utility
+@model object
+
+@{
+    string displayText = string.Empty;
+    //string btnAction = null;
+    //string btnController = null;
+    var htmlAttributes = new RouteValueDictionary();
+
+    if (Model != null)
+    {
+        displayText = Model.ToString();
+    }
+    string modalUrl = ViewBag.modalUrl.ToString();
+
+    //if (ViewBag.action != null)
+    //{
+    //    btnAction = ViewBag.action;
+    //}
+
+    //if (ViewBag.controller != null)
+    //{
+    //    btnController = ViewBag.controller;
+    //}
+
+    //int fid;
+    //string textval = String.Empty;
+    //if (Model.HasValue)
+    //{
+    //    fid = (int)Model;
+    //    List<SearchItem> slist = new List<SearchItem>((List<SearchItem>)ViewBag.searchlist);
+    //    SearchItem sitem = slist.Find(x => x.id == fid);
+    //    if (sitem != null) { textval = sitem.text; }
+    //}
+
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " error has-error"))">
+
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        <div class="input-group">
+            @Html.TextBox("", displayText,
+                                   new { @class = "form-control", @disabled = "disabled"})
+            <span class="input-group-btn">
+                @*@Html.NoEncodeActionLink("<i class='icon wb-search'></i>", "Search", btnAction, btnController, null,
+                    new { @class = "btn btn-primary btn-sm", data_toggle = "modal", data_target = @ViewBag.data_target,
+                        data_backdrop = "static", data_keyboard = "false", data_load="" })*@
+
+                <a href = @modalUrl class="btn btn-primary btn-sm btn-modal" data-toggle="modal" data-target=@ViewBag.data_target 
+                   data-backdrop = "static", data-keyboard = "false", data-load="">
+                    <i class="modal-icon wb-search" aria-hidden="true"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+    @Html.HiddenFor(m => m, new { @id = ViewBag.@id + "_id" })
+    @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+</div>

@@ -1,0 +1,40 @@
+@using WebUI.Utility
+@model Boolean?
+
+@{
+    var htmlAttributes = new RouteValueDictionary();
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "icheckbox-primary " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "icheckbox-primary");
+    }
+
+    if (ViewBag.disabled != null)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+
+    if (ViewBag.disabled != null && ViewBag.disabled != string.Empty)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+
+    htmlAttributes.Add("type", "checkbox");
+    htmlAttributes.Add("data-plugin", "iCheck");
+    htmlAttributes.Add("data-checkbox-class", "icheckbox_flat-blue");
+}
+
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelRequiredFor(m => m, new { @class = "" })
+    <div class="controls">
+        @Html.CheckBox(
+            "",
+            Model.HasValue && Model.Value,
+            htmlAttributes)
+        @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+    </div>
+</div>

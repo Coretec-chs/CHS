@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HRLeaveReimbursmentCard>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">Search Leave Application</h4>
+</div>
+<div class="modal-body">
+    <table class="table table-hover table-striped table-bordered dt-responsive gridfilter" style="width:100%">
+        <thead>
+            <tr>
+                <th>Leave Code</th>
+                <th>Leave Type</th>
+                <th>Start Date</th>
+                <th>Return Date</th>
+                <th>Max. Reimberse Days</th>
+                <th class="no-sort"></th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Leave Code</th>
+                <th>Leave Type</th>
+                <th>Start Date</th>
+                <th>Return Date</th>
+                <th>Max. Reimberse Days</th>
+                <th></th>
+            </tr>
+        </tfoot>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Leave_Application_No)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Leave_Type)
+                    </td>
+                    <td>
+                        @Html.ValueFor(modelItem => item.Start_Date, "{0:dd MMM yyyy}")
+                    </td>
+                    <td>
+                        @Html.ValueFor(modelItem => item.Return_Date, "{0:dd MMM yyyy}")
+                    </td>
+                    <td>
+                        @Html.ValueFor(modelItem => item.Days_to_Reimburse, "{0:n1}")
+                    </td>
+
+
+                    <td class="text-center">
+                        <button type="button" class="btn btn-floating btn-success btn-xxs" title="Select Leave..."
+                                onclick="SelectLeave('@item.Leave_Application_No',
+                                '@item.Leave_Type',
+                                '@item.Start_Date.Value.ToString("dd MMM yyyy")',
+                                '@item.Return_Date.Value.ToString("dd MMM yyyy")',
+                                '@item.Days_Applied.ToString()',
+                                '@item.Days_to_Reimburse.ToString()')">
+                            <i class='icon wb-check'></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+
+@Html.Partial("_ModalScripts")
+<script>
+    Grid.rebind();
+</script>

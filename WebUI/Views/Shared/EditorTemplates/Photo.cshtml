@@ -1,0 +1,35 @@
+@using WebUI.Utility;
+@{
+    var htmlAttributes = new RouteValueDictionary();
+    htmlAttributes.Add("type", "file");
+    htmlAttributes.Add("id", ViewBag.@id);
+    htmlAttributes.Add("data-plugin", "dropify");
+    if (ViewBag.defaultFile != null && !String.IsNullOrWhiteSpace(ViewBag.defaultFile))
+    {
+        htmlAttributes.Add("data-default-file", ViewBag.defaultFile);
+    }
+    else
+    {
+        htmlAttributes.Add("data-default-file", "");
+        ViewBag.defaultFile = "/Content/global/assets/images/noimage.png";
+    }
+}
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="control">
+        <figure class="overlay overlay-hover overlay-background" style="height:250px" data-plugin="uploadimage">
+            <embed class="overlay-figure" style='height: 100%; width: 100%;' src="@ViewBag.defaultFile" id="img_@ViewBag.CtlId">
+            <figcaption class="overlay-panel overlay-background overlay-fade overlay-icon">
+
+                <label for="@ViewBag.CtlId" title="Upload" class="custom-file-upload">
+                    <i class="icon wb-upload"></i>
+                </label>
+                @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), new { @class = "upload-img", type = "file", id = ViewBag.CtlId })
+                <a class="icon wb-search view-img" title="View" href="javascript:void(0)" data-filepath="@ViewBag.defaultFile" id="view_@ViewBag.CtlId"></a>
+                <a class="icon wb-trash clear-img" title="Remove" data-image="img_@ViewBag.CtlId" href="javascript:void(0)"></a>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+

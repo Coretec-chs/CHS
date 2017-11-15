@@ -1,0 +1,164 @@
+﻿@model LeaveApplicationViewModel
+
+
+@{
+    var appcode = string.IsNullOrWhiteSpace(Model.Application_Code) ? "New" : Model.Application_Code;
+    ViewBag.Title = "Leave Application [" + appcode +"]";
+    TempData["Module"] = "Leave";
+    TempData["MenuTag"] = "LeaveApplication";
+    var readStatus = string.Empty;
+    var disabled = string.Empty;
+    var dateTemplate = "DateTime";
+    if (Model.Status != "New" && Model.Status != "Draft")
+    {
+        readStatus = "readonly";
+        disabled = "disabled";
+        dateTemplate = "Text";
+    }
+}
+@using (Html.BeginForm())
+{    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.EditorFor(m => m.Application_Code, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-2">
+                    @Html.EditorFor(m => m.Applicant_Staff_No, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Names, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Responsibility_Center_name, new { @readonly = "readonly" })
+                    @Html.HiddenFor(m => m.Responsibility_Center)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Application_Date, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Leave_Type, new { selectList = Model.LeaveTypeList, disabled = disabled })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.D_Available, new { disabled = "disabled" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Start_Date, dateTemplate, new { @readOnly = readStatus })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Days_Applied, new { @readOnly = readStatus })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Return_Date, new { @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Reliever, new { selectList = Model.RelieverList, disabled = disabled })
+                    @Html.HiddenFor(m => m.Reliever)
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Applicant_Supervisor, new { @readonly = "readonly" })
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(m => m.Status, new { @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.EditorFor(m => m.Applicant_Comments, new { @readOnly = readStatus })
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row padding-bottom-10">
+        <div class="col-md-12">
+            @if (Model.Status == "Draft")
+            {
+                <div class="form-group pull-right">
+                    <input type="submit" name="action" value="Save" class="btn btn-primary" data-submit="" />
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+            else if (Model.Status == "New")
+            {
+                <div class="form-group pull-right">
+                    <input type="submit" name="action" value="Save" class="btn btn-primary" data-submit="" />
+                    <input type="submit" name="action" value="Send for Approval" class="btn btn-success" data-submit="" />
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+            else
+            {
+                <div class="form-group pull-right">
+                    @Html.ActionLink("Close", "Index", null, null, new { @class = "btn btn-default", data_load = "" })
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script>
+        $('.datepicker').datetimepicker({
+            //defaultDate: new Date(),
+            format: 'DD MMM YYYY',
+            showTodayButton: true,
+            showClear: true,
+            showClose: true,
+            ignoreReadonly: true,
+            minDate: 'now',
+            daysOfWeekDisabled: [0, 6]
+        });
+
+        function setReturnDate() {
+            if ($('#Leave_Type').val() == '' || $('#Leave_Type').val() == 'undefinided' || $('#Leave_Type').val() == null
+                || $('#Days_Applied').val() == '' || $('#Days_Applied').val() == 'undefinided' || $('#Days_Applied').val() == null
+                || $('#Start_Date').val() == '' || $('#Start_Date').val() == 'undefinided' || $('#Start_Date').val() == null) {
+                $('#Return_Date').val(null);
+            } else {
+                var ltype = $('#Leave_Type').val();
+                var sdate = $('#Start_Date').val();
+                var days = $('#Days_Applied').val();
+                
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("GetReturnDate")',
+                    data: { 'leaveType': ltype, 'appliedDays': days, 'startDate': sdate },
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#Return_Date').val(data.returnDate);
+                    },
+                    error: function () {
+                        return false;
+                    }
+                });
+            }
+        }
+
+        $(function () {
+            $("#dp_Start_Date").on("dp.change", function (e) {
+                setReturnDate();
+            });
+        })
+
+        $(function () {
+            $("#Leave_Type").change(function () {
+                setReturnDate();
+            });
+        });
+
+        $(function () {
+            $("#Days_Applied").change(function () {
+                setReturnDate();
+            });
+        });
+    </script>
+}

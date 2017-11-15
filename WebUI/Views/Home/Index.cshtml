@@ -1,0 +1,129 @@
+﻿@model EmployeeCard
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row" data-plugin="matchHeight" data-by-row="true">
+        <div class="col-lg-4 col-sm-4 col-xs-12 info-panel">
+            <div class="widget widget-shadow">
+                <div class="widget-content bg-white padding-20">
+                    <button type="button" class="btn btn-floating btn-sm btn-info">
+                        <i class="icon wb-user-circle"></i>
+                    </button>
+                    <span class="margin-left-15 font-weight-600">LEAVE BALANCE</span>
+                    <div class="content-text text-center margin-bottom-0">
+                        <span class="font-size-20 font-weight-100 text-uppercase">
+                            @Html.DisplayFor(m => m.Leave_Balance)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-xs-12 info-panel">
+            <div class="widget widget-shadow info-panel">
+                <div class="widget-content bg-white padding-20">
+                    <button type="button" class="btn btn-floating btn-sm btn-success">
+                        <i class="icon fa-money"></i>
+                    </button>
+                    <span class="margin-left-15 font-weight-600">APPROVAL REQUESTS</span>
+                    <div class="content-text text-center margin-bottom-0">
+                        <span class="font-size-20 font-weight-100">
+                            @*@{Html.RenderAction("Arrear");}*@
+                            0
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-xs-12 info-panel ">
+            <div class="widget widget-shadow info-panel">
+                <div class="widget-content bg-white padding-20">
+                    <button type="button" class="btn btn-floating btn-sm btn-success">
+                        <i class="icon fa-money"></i>
+                    </button>
+                    <span class="margin-left-15 font-weight-600">CURRENT TIMESHEETS</span>
+                    <div class="content-text text-center margin-bottom-0">
+                        <span class="font-size-20 font-weight-100">
+                            @*@{Html.RenderAction("Arrear");}*@
+                            0
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xlg-4 col-lg-6 col-md-6">
+            <div id="personalCompletedWidget" class="widget widget-shadow padding-bottom-20">
+                <div class="widget-header cover overlay">
+                    <div class="overlay-panel vertical-align">
+                        <div class="vertical-align-middle">
+                            <a class="" href="javascript:void(0)">
+                                <img style='height: 200px; width: 250px;' src='/Content/global/assets/images/noimage.png' alt=""
+                                     onerror="this.onerror = null; this.src = '/Content/global/assets/images/noimage.png';">
+                            </a>
+                            <div class="font-size-20 margin-top-10 blue-800">
+                                @Model.First_Name &nbsp; @Model.Last_Name
+                            </div>
+                            <div class="font-size-14">
+                                @Html.DisplayTextFor(model => model.Job_Title)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <!-- Personal -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption>General Information</caption>
+                            <tbody>
+                                <tr>
+                                    <td>Staff Number</td>
+                                    <td>@Html.ValueFor(model => model.No)</td>
+
+                                </tr>
+                                <tr>
+                                    <td>National ID\Passport Number</td>
+                                    <td>@Html.ValueFor(model => model.ID_Number)</td>
+
+                                </tr>
+                                <tr>
+                                    <td style="width:30%">Date of Birth</td>
+                                    <td>@Html.ValueFor(model => model.Date_Of_Birth,"{0:dd MMM yyyy}")</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Joining</td>
+                                    <td>@Html.ValueFor(model => model.Date_Of_Join, "{0:dd MMM yyyy}")</td>
+                                </tr>
+                                <tr>
+                                    <td>E-Mail Address</td>
+                                    <td>@Html.DisplayTextFor(model=> model.E_Mail)</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:30%">Status</td>
+                                    <td>@Html.ValueFor(model => model.Status)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Personal -->
+        <!-- To Do List -->
+        <div class="col-xlg-8 col-lg-6 col-md-6">
+            <div id="recentActivityWidget" class="widget widget-shadow padding-bottom-20">
+                <div class="widget-header padding-top-5">
+                    <h5 class="widget-header blue-grey-700 font-size-18 padding-top-5">NOTIFICATIONS</h5>
+                </div>
+                <ul class=" timeline timeline-icon">
+                    @*@Html.Action("Notify")*@
+                    <li class="timeline-reverse"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End To Do List -->
+    </div>
+}

@@ -1,0 +1,45 @@
+@using WebUI.Utility
+@model object
+
+@{    
+    var htmlAttributes = new RouteValueDictionary();
+    htmlAttributes.Add("readonly", "readonly");
+    if (ViewBag.@class != null)
+    {
+        htmlAttributes.Add("class", "form-control input-sm " + ViewBag.@class);
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control input-sm");
+    }
+
+    if (ViewBag.@onchange != null)
+    {
+        htmlAttributes.Add("dp.change", ViewBag.@onchange);
+    }
+
+    if (ViewBag.@onclick != null)
+    {
+        htmlAttributes.Add("onclick", ViewBag.@onclick);
+    }
+    
+}
+
+<div class="form-group-sm@(Html.ValidationErrorFor(m => m, " error has-error"))">
+    @Html.LabelFor(m => m, new { @class = "control-label" },"",true)
+    <div class="controls">
+        <div class="input-group date monthpicker" id="dp_@ViewData.ModelMetadata.PropertyName"  >
+            @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, "{0:MMM yyyy}", htmlAttributes)
+            @*@Html.TextBox("", dt,"{0:DD MMM YYYY}", new { @class = "form-control input-sm", @readonly="readonly" })*@
+            @*@Html.TextBox(
+                "",
+                Model == null ? "" : String.Format("{0:dd/MMM/yyyy}", dt),
+                 ViewBag.ClearTextField == true ? new { @class = "form-control clear-text-field input-sm " } : new { @class = "form-control input-sm datepicker" })*@
+
+            <span class="input-group-addon">
+                <span class="icon wb-calendar"></span>
+            </span>
+        </div>
+    </div>
+    @Html.ValidationMessageFor(m => m, null, new { @class = "help-block" })
+</div>
